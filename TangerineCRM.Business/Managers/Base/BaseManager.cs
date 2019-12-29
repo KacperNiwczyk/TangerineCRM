@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TangerineCRM.Business.Interfaces;
+﻿using System.Collections.Generic;
 using TangerineCRM.Core.DataAccess;
 using TangerineCRM.Core.Entities;
 using TangerineCRM.Core.Helpers.Enums;
-using TangerineCRM.DataAccess.Interfaces;
 
 namespace TangerineCRM.Business.Managers
 {
@@ -24,7 +18,7 @@ namespace TangerineCRM.Business.Managers
         {
             var result = Validate(t);
 
-            if(result == ValidationResult.SUCCESS)
+            if (result == ValidationResult.SUCCESS)
             {
                 _dal.Add(t);
             }
@@ -45,7 +39,7 @@ namespace TangerineCRM.Business.Managers
             _dal.Update(t);
         }
 
-       protected abstract ValidationResult Validate(T t);
-        
+        protected abstract ValidationResult Validate(T t);
+
     }
 }

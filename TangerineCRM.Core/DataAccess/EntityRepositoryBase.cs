@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Data;
+using System.Data.Entity;
+using System.Linq;
 using System.Linq.Expressions;
 using TangerineCRM.Core.Entities;
-using System.Data.Entity;
 
 namespace TangerineCRM.Core.DataAccess
 {
@@ -14,7 +14,7 @@ namespace TangerineCRM.Core.DataAccess
     {
         public TEntity Add(TEntity entity)
         {
-            using(var context = new TContext())
+            using (var context = new TContext())
             {
                 var addedEntity = context.Entry(entity);
                 addedEntity.State = EntityState.Added;
@@ -38,21 +38,21 @@ namespace TangerineCRM.Core.DataAccess
         {
             using (var context = new TContext())
             {
-                return context.Set<TEntity>().SingleOrDefault(filter);
+               return context.Set<TEntity>().SingleOrDefault(filter);
             }
         }
 
         public List<TEntity> GetList(Expression<Func<TEntity, bool>> filter = null)
         {
-           using(var context = new TContext())
-           {
-                if(filter != null)
+            using (var context = new TContext())
+            {
+                if (filter != null)
                 {
                     return context.Set<TEntity>().Where(filter).ToList();
                 }
 
                 return context.Set<TEntity>().ToList();
-           }
+            }
         }
 
         public TEntity Update(TEntity entity)

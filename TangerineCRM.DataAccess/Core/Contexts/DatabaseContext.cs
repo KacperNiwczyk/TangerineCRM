@@ -30,6 +30,7 @@ namespace TangerineCRM.DataAccess.Core.Contexts
             modelBuilder.Configurations.Add(new ContractorMapping());
             modelBuilder.Configurations.Add(new AppointmentMapping());
             modelBuilder.Configurations.Add(new AgreementMapping());
+
         }
     }
 }

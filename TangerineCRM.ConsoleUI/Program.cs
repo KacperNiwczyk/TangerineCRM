@@ -1,6 +1,7 @@
 ﻿using System;
 using TangerineCRM.Business;
 using TangerineCRM.Business.Interfaces;
+using TangerineCRM.Business.Managers;
 using TangerineCRM.DataAccess.Core;
 using TangerineCRM.Entities.Base;
 
@@ -11,12 +12,11 @@ namespace TangerineCRM.ConsoleUI
         static void Main(string[] args)
         {
             IProductService productManager = new ProductManager(new ProductDal());
+            IStoreService store = new StoreManager(new StoreDal());
+
             productManager.Add(new Product { ProductName = "Tangerines", Price = 50, ProductId = 1, Store = new Store() { Address = new Address(), Contractor = new Contractor() } });
 
-            foreach (var product in productManager.GetAll())
-            {
-                Console.WriteLine(product.ProductName + "\t" + product.Price + "\t" + product.StoreID);
-            }
+            productManager.GetAll().ForEach(x => Console.WriteLine(x.Store.ContractorId));
 
             Console.ReadLine();
         }
