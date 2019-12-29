@@ -11,11 +11,11 @@ namespace TangerineCRM.ConsoleUI
         static void Main(string[] args)
         {
             IProductService productManager = new ProductManager(new ProductDal());
-            productManager.Add(new Product { ProductName = "Tangerines", Price = 50, ProductId = 1, StoreID = 1 });
+            productManager.Add(new Product { ProductName = "Tangerines", Price = 50, ProductId = 1, Store = new Store() { Address = new Address(), Contractor = new Contractor() } });
 
-            foreach(var product in productManager.GetAll())
+            foreach (var product in productManager.GetAll())
             {
-                Console.WriteLine(product.ProductName);
+                Console.WriteLine(product.ProductName + "\t" + product.Price + "\t" + product.StoreID);
             }
 
             Console.ReadLine();
