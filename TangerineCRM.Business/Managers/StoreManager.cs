@@ -10,15 +10,15 @@ using TangerineCRM.Entities.Base;
 
 namespace TangerineCRM.Business.Managers
 {
-    public class UserManager : BaseManager<User>, IUserService
+    public class StoreManager : BaseManager<Store>, IStoreService
     {
-        IUserDal _userDal;
-        public UserManager(IUserDal userDal) : base (userDal)
+        IStoreDal _storeDal;
+        public StoreManager(IStoreDal storeDal) : base (storeDal)
         {
-            _userDal = userDal;
+            _storeDal = storeDal;
         }
 
-        protected override ValidationResult Validate(User t)
+        protected override ValidationResult Validate(Store t)
         {
             return ValidationResult.SUCCESS;
         }

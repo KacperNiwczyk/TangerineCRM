@@ -2,7 +2,7 @@
 
 namespace TangerineCRM.Business.Interfaces
 {
-    public interface IAgreemnetService : IService<Agreement>
+    public interface IAgreementService : IService<Agreement>
     {
     }
 }

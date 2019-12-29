@@ -10,15 +10,14 @@ using TangerineCRM.Entities.Base;
 
 namespace TangerineCRM.Business.Managers
 {
-    public class UserManager : BaseManager<User>, IUserService
+    public class AppointmentManager : BaseManager<Appointment>, IAppointmentService
     {
-        IUserDal _userDal;
-        public UserManager(IUserDal userDal) : base (userDal)
+        IAppointmentDal _appointmentDal;
+        public AppointmentManager(IAppointmentDal appointmentDal) : base (appointmentDal)
         {
-            _userDal = userDal;
+            _appointmentDal = appointmentDal;
         }
-
-        protected override ValidationResult Validate(User t)
+        protected override ValidationResult Validate(Appointment t)
         {
             return ValidationResult.SUCCESS;
         }
