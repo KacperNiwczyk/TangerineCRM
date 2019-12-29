@@ -122,7 +122,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\AddressDal.cs" />
+    <Compile Include="Core\AgreementDal.cs" />
+    <Compile Include="Core\AppointmentDal.cs" />
     <Compile Include="Core\Contexts\DatabaseContext.cs" />
+    <Compile Include="Core\ContractorDal.cs" />
     <Compile Include="Core\Mapping\AddressMapping.cs" />
     <Compile Include="Core\Mapping\AgreementMapping.cs" />
     <Compile Include="Core\Mapping\AppointmentMapping.cs" />
@@ -132,10 +135,15 @@
     <Compile Include="Core\Mapping\StoreMapping.cs" />
     <Compile Include="Core\Mapping\UserMapping.cs" />
     <Compile Include="Core\ProductDal.cs" />
+    <Compile Include="Core\SalesRepresentativeDal.cs" />
     <Compile Include="Core\StoreDal.cs" />
     <Compile Include="Core\UserDal.cs" />
     <Compile Include="Interfaces\IAddressDal.cs" />
+    <Compile Include="Interfaces\IAgreementDal.cs" />
+    <Compile Include="Interfaces\IAppointmentDal.cs" />
+    <Compile Include="Interfaces\IContractorDal.cs" />
     <Compile Include="Interfaces\IProductDal.cs" />
+    <Compile Include="Interfaces\ISalesRepresentativeDal.cs" />
     <Compile Include="Interfaces\IStoreDal.cs" />
     <Compile Include="Interfaces\IUserDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

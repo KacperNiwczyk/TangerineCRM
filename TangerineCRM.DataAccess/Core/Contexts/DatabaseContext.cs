@@ -31,7 +31,11 @@ namespace TangerineCRM.DataAccess.Core.Contexts
             modelBuilder.Configurations.Add(new ProductMapping());
             modelBuilder.Configurations.Add(new AddressMapping());
             modelBuilder.Configurations.Add(new UserMapping());
-
+            modelBuilder.Configurations.Add(new StoreMapping());
+            modelBuilder.Configurations.Add(new SalesRepresentativeMapping());
+            modelBuilder.Configurations.Add(new ContractorMapping());
+            modelBuilder.Configurations.Add(new AppointmentMapping());
+            modelBuilder.Configurations.Add(new AgreementMapping());
         }
 
     }

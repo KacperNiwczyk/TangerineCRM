@@ -42,8 +42,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IAddressService.cs" />
+    <Compile Include="Interfaces\IAgreemnetService.cs" />
+    <Compile Include="Interfaces\IAppointmentService.cs" />
+    <Compile Include="Interfaces\IContractorService.cs" />
     <Compile Include="Interfaces\IProductService.cs" />
+    <Compile Include="Interfaces\ISalesRepresentativeService.cs" />
     <Compile Include="Interfaces\IService.cs" />
+    <Compile Include="Interfaces\IStoreService.cs" />
     <Compile Include="Interfaces\IUserService.cs" />
     <Compile Include="Managers\AddressManager.cs" />
     <Compile Include="Managers\BaseManager.cs" />
