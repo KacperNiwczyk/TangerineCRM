@@ -1,0 +1,12 @@
+C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Entities\bin\Debug\TangerineCRM.Entities.dll.config
+C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Entities\bin\Debug\TangerineCRM.Entities.dll
+C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Entities\bin\Debug\TangerineCRM.Entities.pdb
+C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Entities\bin\Debug\TangerineCRM.Core.dll
+C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Entities\bin\Debug\TangerineCRM.Core.pdb
+C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Entities\bin\Debug\TangerineCRM.Core.dll.config
+C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Entities\obj\Debug\TangerineCRM.Entities.csprojAssemblyReference.cache
+C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Entities\obj\Debug\TangerineCRM.Entities.csproj.CopyComplete
+C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Entities\obj\Debug\TangerineCRM.Entities.dll
+C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Entities\obj\Debug\TangerineCRM.Entities.pdb
+C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Entities\bin\Debug\EntityFramework.dll
+C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Entities\bin\Debug\EntityFramework.xml

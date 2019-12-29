@@ -1,0 +1,6 @@
+C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.ConsoleUI\bin\Debug\TangerineCRM.ConsoleUI.exe.config
+C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.ConsoleUI\bin\Debug\TangerineCRM.ConsoleUI.exe
+C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.ConsoleUI\bin\Debug\TangerineCRM.ConsoleUI.pdb
+C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.ConsoleUI\obj\Debug\TangerineCRM.ConsoleUI.csprojAssemblyReference.cache
+C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.ConsoleUI\obj\Debug\TangerineCRM.ConsoleUI.exe
+C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.ConsoleUI\obj\Debug\TangerineCRM.ConsoleUI.pdb

@@ -1,0 +1,51 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using TangerineCRM.Business.Interfaces;
+using TangerineCRM.Core.DataAccess;
+using TangerineCRM.Core.Entities;
+using TangerineCRM.Core.Helpers.Enums;
+using TangerineCRM.DataAccess.Interfaces;
+
+namespace TangerineCRM.Business.Managers
+{
+    public abstract class BaseManager<T> where T : class, IEntity, new()
+    {
+        IEntityRepository<T> _dal;
+
+        public BaseManager(IEntityRepository<T> dal)
+        {
+            _dal = dal;
+        }
+
+        public void Add(T t)
+        {
+            var result = Validate(t);
+
+            if(result == ValidationResult.SUCCESS)
+            {
+                _dal.Add(t);
+            }
+        }
+
+        public void Delete(T t)
+        {
+            _dal.Delete(t);
+        }
+
+        public List<T> GetAll()
+        {
+            return _dal.GetList();
+        }
+
+        public void Update(T t)
+        {
+            _dal.Update(t);
+        }
+
+       protected abstract ValidationResult Validate(T t);
+        
+    }
+}
