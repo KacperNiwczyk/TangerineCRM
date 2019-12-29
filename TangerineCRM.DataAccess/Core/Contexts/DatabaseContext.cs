@@ -1,10 +1,4 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity;
 using TangerineCRM.DataAccess.Core.Mapping;
 using TangerineCRM.Entities.Base;
 
@@ -14,7 +8,7 @@ namespace TangerineCRM.DataAccess.Core.Contexts
     {
         DbSet<Product> Products { get; set; }
         DbSet<User> Users { get; set; }
-        DbSet<Address> Addresses {get; set; }
+        DbSet<Address> Addresses { get; set; }
         DbSet<Store> Stores { get; set; }
         DbSet<Agreement> Agreements { get; set; }
         DbSet<Appointment> Appointments { get; set; }
@@ -23,7 +17,7 @@ namespace TangerineCRM.DataAccess.Core.Contexts
 
         public DatabaseContext()
         {
-            Database.SetInitializer<DatabaseContext>(null);
+            Database.SetInitializer(new CreateDatabaseIfNotExists<DatabaseContext>());
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -37,6 +31,5 @@ namespace TangerineCRM.DataAccess.Core.Contexts
             modelBuilder.Configurations.Add(new AppointmentMapping());
             modelBuilder.Configurations.Add(new AgreementMapping());
         }
-
     }
 }
