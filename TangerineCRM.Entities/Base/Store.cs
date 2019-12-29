@@ -12,7 +12,9 @@ namespace TangerineCRM.Entities.Base
         public int StoreId { get; set; }
 
         public int AddressId { get; set; }
+        public Address Address { get; set; }
 
         public int ContractorId { get; set; }
+        public Contractor Contractor { get; set; }
     }
 }
