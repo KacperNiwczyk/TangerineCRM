@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 using TangerineCRM.Core.Entities;
+using TangerineCRM.DataAccess.Core.Contexts;
 
 namespace TangerineCRM.Core.DataAccess
 {
@@ -34,24 +35,24 @@ namespace TangerineCRM.Core.DataAccess
         }
 
 
-        public TEntity Get(Expression<Func<TEntity, bool>> filter)
+        public TEntity Get(Expression<Func<TEntity, bool>> filter, params Expression<Func<TEntity, object>>[] includes)
         {
             using (var context = new TContext())
             {
-               return context.Set<TEntity>().SingleOrDefault(filter);
+                return context.Set<TEntity>().IncludeMultiple(includes).SingleOrDefault(filter);
             }
         }
 
-        public List<TEntity> GetList(Expression<Func<TEntity, bool>> filter = null)
+        public List<TEntity> GetList(Expression<Func<TEntity, bool>> filter = null, params Expression<Func<TEntity, object>>[] navigationProperties)
         {
             using (var context = new TContext())
             {
-                if (filter != null)
-                {
-                    return context.Set<TEntity>().Where(filter).ToList();
-                }
+                IQueryable<TEntity> dbQuery = context.Set<TEntity>();
 
-                return context.Set<TEntity>().ToList();
+                foreach (Expression<Func<TEntity, object>> navigationProperty in navigationProperties)
+                    dbQuery = dbQuery.Include<TEntity, object>(navigationProperty);
+
+                return filter != null ? dbQuery.AsNoTracking().Where(filter).ToList() : dbQuery.AsNoTracking().ToList();   
             }
         }
 

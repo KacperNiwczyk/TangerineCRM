@@ -17,6 +17,12 @@ namespace TangerineCRM.Business.Managers
         {
             _addresDal = addressDal;
         }
+
+        public List<Address> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
         protected override ValidationResult Validate(Address t)
         {
             return ValidationResult.SUCCESS;

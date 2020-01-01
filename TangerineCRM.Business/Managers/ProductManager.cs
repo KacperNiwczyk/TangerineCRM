@@ -18,6 +18,11 @@ namespace TangerineCRM.Business
             _productDal = productDal;
         }
 
+        public List<Product> GetAll()
+        {
+            return _productDal.GetList(null, x => x.Store);
+        }
+
         public List<Product> GetAllByPrice(Order order)
         {
             switch (order)

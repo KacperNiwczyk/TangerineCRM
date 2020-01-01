@@ -17,6 +17,12 @@ namespace TangerineCRM.Business.Managers
         {
             _appointmentDal = appointmentDal;
         }
+
+        public List<Appointment> GetAll()
+        {
+            return _appointmentDal.GetList(null, x => x.Contractor, x => x.SalesRepresentative);
+        }
+
         protected override ValidationResult Validate(Appointment t)
         {
             return ValidationResult.SUCCESS;

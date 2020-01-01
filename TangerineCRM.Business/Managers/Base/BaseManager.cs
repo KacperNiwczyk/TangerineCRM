@@ -29,11 +29,6 @@ namespace TangerineCRM.Business.Managers
             _dal.Delete(t);
         }
 
-        public List<T> GetAll()
-        {
-            return _dal.GetList();
-        }
-
         public void Update(T t)
         {
             _dal.Update(t);

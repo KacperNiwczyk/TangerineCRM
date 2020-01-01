@@ -2,6 +2,7 @@
 using TangerineCRM.Core.Helpers.Enums;
 using TangerineCRM.Entities.Base;
 using TangerineCRM.DataAccess.Interfaces;
+using System.Collections.Generic;
 
 namespace TangerineCRM.Business.Managers
 {
@@ -11,6 +12,11 @@ namespace TangerineCRM.Business.Managers
         public ContractorManager(IContractorDal contractorDal) : base (contractorDal)
         {
             _contractorDal = contractorDal;
+        }
+
+        public List<Contractor> GetAll()
+        {
+            throw new System.NotImplementedException();
         }
 
         protected override ValidationResult Validate(Contractor t)

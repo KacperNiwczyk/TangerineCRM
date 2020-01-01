@@ -89,3 +89,5 @@ C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.WebUI\obj\Debug\Tangerine
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.WebUI\obj\Debug\TangerineCRM.WebUI.csproj.CopyComplete
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.WebUI\obj\Debug\TangerineCRM.WebUI.dll
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.WebUI\obj\Debug\TangerineCRM.WebUI.pdb
+C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.WebUI\bin\EntityFramework.SqlServer.dll
+C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.WebUI\bin\EntityFramework.SqlServer.xml

@@ -18,6 +18,11 @@ namespace TangerineCRM.Business.Managers
             _userDal = userDal;
         }
 
+        public List<User> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
         protected override ValidationResult Validate(User t)
         {
             return ValidationResult.SUCCESS;

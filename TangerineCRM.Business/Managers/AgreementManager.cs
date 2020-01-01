@@ -17,6 +17,12 @@ namespace TangerineCRM.Business.Managers
         {
             _agreementDal = agreementDal;
         }
+
+        public List<Agreement> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
         protected override ValidationResult Validate(Agreement t)
         {
             return ValidationResult.SUCCESS;

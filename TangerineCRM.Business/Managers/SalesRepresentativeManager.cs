@@ -17,6 +17,12 @@ namespace TangerineCRM.Business.Managers
         {
             _salesRepresentativeDal = salesRepresentativeDal;
         }
+
+        public List<SalesRepresentative> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
         protected override ValidationResult Validate(SalesRepresentative t)
         {
             return ValidationResult.SUCCESS;
