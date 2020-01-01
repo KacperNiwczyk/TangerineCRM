@@ -14,9 +14,9 @@ namespace TangerineCRM.ConsoleUI
             IProductService productManager = new ProductManager(new ProductDal());
             IStoreService store = new StoreManager(new StoreDal());
 
-            productManager.Add(new Product { ProductName = "Tangerines", Price = 50, ProductId = 1, Store = new Store() { Address = new Address(), Contractor = new Contractor() } });
+            productManager.Add(new Product { ProductName = "Tangerines", Price = 50, ProductId = 1, Store = new Store() { Address = new Address() { Street = "test"}, Contractor = new Contractor() } });
 
-            productManager.GetAll().ForEach(x => Console.WriteLine(x.Store.ContractorId));
+            productManager.GetAll().ForEach(x => Console.WriteLine(x.Store.Address.Street));
 
             Console.ReadLine();
         }

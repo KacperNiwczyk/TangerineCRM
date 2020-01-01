@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using TangerineCRM.Business.Interfaces;
 using TangerineCRM.Core.Helpers.Enums;
 using TangerineCRM.DataAccess.Interfaces;
@@ -13,14 +9,14 @@ namespace TangerineCRM.Business.Managers
     public class StoreManager : BaseManager<Store>, IStoreService
     {
         IStoreDal _storeDal;
-        public StoreManager(IStoreDal storeDal) : base (storeDal)
+        public StoreManager(IStoreDal storeDal) : base(storeDal)
         {
             _storeDal = storeDal;
         }
 
         public List<Store> GetAll()
         {
-            throw new NotImplementedException();
+            return _storeDal.GetList(null, x => x.Address, x => x.Contractor);
         }
 
         protected override ValidationResult Validate(Store t)

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using TangerineCRM.Business.Interfaces;
 using TangerineCRM.Core.Helpers.Enums;
 using TangerineCRM.DataAccess.Interfaces;
@@ -13,14 +9,14 @@ namespace TangerineCRM.Business.Managers
     public class SalesRepresentativeManager : BaseManager<SalesRepresentative>, ISalesRepresentativeService
     {
         ISalesRepresentativeDal _salesRepresentativeDal;
-        public SalesRepresentativeManager(ISalesRepresentativeDal salesRepresentativeDal) : base (salesRepresentativeDal)
+        public SalesRepresentativeManager(ISalesRepresentativeDal salesRepresentativeDal) : base(salesRepresentativeDal)
         {
             _salesRepresentativeDal = salesRepresentativeDal;
         }
 
         public List<SalesRepresentative> GetAll()
         {
-            throw new NotImplementedException();
+            return _salesRepresentativeDal.GetList();
         }
 
         protected override ValidationResult Validate(SalesRepresentative t)

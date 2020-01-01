@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using TangerineCRM.Business.Interfaces;
 using TangerineCRM.Core.Helpers.Enums;
 using TangerineCRM.DataAccess.Interfaces;
@@ -13,14 +9,14 @@ namespace TangerineCRM.Business.Managers
     public class AddressManager : BaseManager<Address>, IAddressService
     {
         IAddressDal _addresDal;
-        public AddressManager(IAddressDal addressDal) : base (addressDal)
+        public AddressManager(IAddressDal addressDal) : base(addressDal)
         {
             _addresDal = addressDal;
         }
 
         public List<Address> GetAll()
         {
-            throw new NotImplementedException();
+            return _addresDal.GetList();
         }
 
         protected override ValidationResult Validate(Address t)

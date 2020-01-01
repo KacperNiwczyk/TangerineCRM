@@ -20,7 +20,7 @@ namespace TangerineCRM.Business
 
         public List<Product> GetAll()
         {
-            return _productDal.GetList(null, x => x.Store);
+            return _productDal.GetList(null, x => x.Store, x => x.Store.Address, x => x.Store.Contractor); // no way around 
         }
 
         public List<Product> GetAllByPrice(Order order)
