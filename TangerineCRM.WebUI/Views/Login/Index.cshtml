@@ -19,12 +19,12 @@
                 <img src="" id="icon" alt="User Icon" />
             </div>
             <!-- Login Form -->
-            @using(Html.BeginForm("Authorization", "Login", FormMethod.Post))
+            @using (Html.BeginForm("Authorization", "Login", FormMethod.Post))
             {
-               @Html.TextBoxFor(x => x.UserModel.UserName, new { @class = "fadeIn second", @name = "login", @placeholder = "login" });
-               @Html.ValidationMessageFor(x => x.UserModel.UserName));
-               @Html.PasswordFor(x => x.UserModel.Password, new { @class = "fadeIn third", @name = "password", @placeholder = "password" });
-               @Html.ValidationMessageFor(x => x.UserModel.Password);
+                @Html.TextBoxFor(x => x.UserModel.UserName, new { @class = "fadeIn second", @name = "login", @placeholder = "login" });
+                @Html.ValidationMessageFor(x => x.UserModel.UserName);
+                @Html.PasswordFor(x => x.UserModel.Password, new { @class = "fadeIn third", @name = "password", @placeholder = "password" });
+                @Html.ValidationMessageFor(x => x.UserModel.Password);
                 <br />
                 <input type="submit" class="fadeIn fourth" value="Authorize">
             }
