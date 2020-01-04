@@ -8,10 +8,10 @@ namespace TangerineCRM.Entities.Base
         public int AppointmentId { get; set; }
 
         public int ContractorId { get; set; }
-        public Contractor Contractor { get; set; }
+        public virtual Contractor Contractor { get; set; }
 
         public int SalesRepresentativeId { get; set; }
-        public SalesRepresentative SalesRepresentative { get; set; }
+        public virtual SalesRepresentative SalesRepresentative { get; set; }
 
         public DateTime Date { get; set; }
 

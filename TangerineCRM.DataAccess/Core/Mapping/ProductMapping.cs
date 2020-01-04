@@ -8,9 +8,6 @@ namespace TangerineCRM.DataAccess.Core.Mapping
     {
         public ProductMapping()
         {
-            ToTable("Products");
-            HasKey(x => x.ProductId);
-            Property(x => x.ProductId).HasColumnName("ProductsID");
         }
     }
 }

@@ -2,6 +2,7 @@
 using TangerineCRM.DataAccess.Core.Mapping;
 using TangerineCRM.Entities.Base;
 
+
 namespace TangerineCRM.DataAccess.Core.Contexts
 {
     public class DatabaseContext : DbContext
