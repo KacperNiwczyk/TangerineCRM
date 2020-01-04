@@ -1,6 +1,5 @@
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\bin\Debug\TangerineCRM.Core.dll
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\bin\Debug\TangerineCRM.Core.pdb
-C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\obj\Debug\TangerineCRM.Core.csprojAssemblyReference.cache
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\obj\Debug\TangerineCRM.Core.dll
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\obj\Debug\TangerineCRM.Core.pdb
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\bin\Debug\TangerineCRM.Core.dll.config

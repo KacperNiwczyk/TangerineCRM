@@ -1,0 +1,41 @@
+﻿@model TangerineCRM.WebUI.Models.UserViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    @Styles.Render("~/Content/login")
+</head>
+<body>
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <!-- Tabs Titles -->
+            <!-- Icon -->
+            <div class="fadeIn first">
+                <img src="" id="icon" alt="User Icon" />
+            </div>
+            <!-- Login Form -->
+            @using(Html.BeginForm("Authorization", "Login", FormMethod.Post))
+            {
+               @Html.TextBoxFor(x => x.UserModel.UserName, new { @class = "fadeIn second", @name = "login", @placeholder = "login" });
+               @Html.ValidationMessageFor(x => x.UserModel.UserName));
+               @Html.PasswordFor(x => x.UserModel.Password, new { @class = "fadeIn third", @name = "password", @placeholder = "password" });
+               @Html.ValidationMessageFor(x => x.UserModel.Password);
+                <br />
+                <input type="submit" class="fadeIn fourth" value="Authorize">
+            }
+            <!-- Remind Passowrd -->
+            <div id="formFooter">
+                <a class="underlineHover" href="#">Forgot Password?</a>
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>
