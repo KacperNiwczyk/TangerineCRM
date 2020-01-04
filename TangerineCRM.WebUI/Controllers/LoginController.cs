@@ -27,7 +27,8 @@ namespace TangerineCRM.WebUI.Controllers
                 return View("Index", user);
             }
 
-            return View();
+            Session["userId"] = user.UserModel.UserId;
+            return RedirectToAction("Index", "Home");
         }
     }
 }
