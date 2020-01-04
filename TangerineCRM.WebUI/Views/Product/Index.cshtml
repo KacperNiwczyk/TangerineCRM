@@ -7,9 +7,6 @@
 <h2>Index</h2>
 <body>
     <div>
-        @foreach(var product in Model.ProductModel)
-        {
-            @product.Store.StoreId
-        }
+        @Html.DropDownListFor(x => x.ProductList, new SelectList(Model.ProductList, "ProductName"))
     </div>
 </body>

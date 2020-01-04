@@ -17,7 +17,7 @@ namespace TangerineCRM.WebUI.Controllers
 
             var productModel = new ProductViewModel()
             {
-                ProductModel = productManager.GetAll()
+                ProductList = productManager.GetAll()
             };
 
             return View(productModel);

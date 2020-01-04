@@ -5,6 +5,6 @@ namespace TangerineCRM.WebUI.Models
 {
     public class ProductViewModel
     {
-        public List<Product> ProductModel { get; set; }
+        public List<Product> ProductList { get; set; }
     }
 }
