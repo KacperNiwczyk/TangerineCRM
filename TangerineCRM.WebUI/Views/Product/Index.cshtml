@@ -3,10 +3,20 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@Styles.Render("~/Content/table")
 
 <h2>Index</h2>
 <body>
-    <div>
-        @Html.DropDownListFor(x => x.ProductList, new SelectList(Model.ProductList, "ProductName"))
+    <div class="row" style="width:100%">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nazwa produktu</th>
+                    <th>Cena</th>
+                    <th>ID Sklepu</th>
+                </tr>
+            </thead>
+        </table>
     </div>
 </body>

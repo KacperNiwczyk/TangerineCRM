@@ -25,6 +25,8 @@ namespace TangerineCRM.WebUI
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
             bundles.Add(new StyleBundle("~/Content/login").Include("~/Content/Login.css"));
+
+            bundles.Add(new StyleBundle("~/Content/table").Include("~/Content/table.css"));
         }
     }
 }
