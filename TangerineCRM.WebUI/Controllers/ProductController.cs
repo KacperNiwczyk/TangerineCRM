@@ -2,6 +2,7 @@
 using TangerineCRM.Business;
 using TangerineCRM.DataAccess.Core;
 using TangerineCRM.Entities.Base;
+using TangerineCRM.WebUI.Models;
 
 namespace TangerineCRM.WebUI.Controllers
 {
@@ -12,9 +13,14 @@ namespace TangerineCRM.WebUI.Controllers
         {
             var productManager = new ProductManager(new ProductDal());
 
-            productManager.Add(new Product());
+            productManager.Add(new Product() { ProductName = "Mandarynki", Store = new Store() });
 
-            return View();
+            var productModel = new ProductViewModel()
+            {
+                ProductModel = productManager.GetAll()
+            };
+
+            return View(productModel);
         }
     }
 }

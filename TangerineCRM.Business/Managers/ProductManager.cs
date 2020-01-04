@@ -38,7 +38,7 @@ namespace TangerineCRM.Business
 
         public List<Product> GetAllByStore(int storeId)
         {
-            return _productDal.GetList().Where(x => x.StoreID == storeId).ToList();
+            return _productDal.GetList().Where(x => x.Store.StoreId == storeId).ToList();
         }
 
         protected override ValidationResult Validate(Product t)
