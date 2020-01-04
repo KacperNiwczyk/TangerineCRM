@@ -16,7 +16,7 @@
             <!-- Tabs Titles -->
             <!-- Icon -->
             <div class="fadeIn first">
-                <img src="" id="icon" alt="User Icon" />
+                <img src="~/Resources/logo.png" id="icon" alt="User Icon" />
             </div>
             <!-- Login Form -->
             @using (Html.BeginForm("Authorization", "Login", FormMethod.Post))
@@ -25,6 +25,7 @@
                 @Html.ValidationMessageFor(x => x.UserModel.UserName);
                 @Html.PasswordFor(x => x.UserModel.Password, new { @class = "fadeIn third", @name = "password", @placeholder = "password" });
                 @Html.ValidationMessageFor(x => x.UserModel.Password);
+                <label class="field-validation-error">@Html.DisplayFor(x => x.ErrorMessage)</label>
                 <br />
                 <input type="submit" class="fadeIn fourth" value="Authorize">
             }

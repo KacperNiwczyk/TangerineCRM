@@ -17,7 +17,7 @@ namespace TangerineCRM.DataAccess.Core.Contexts
 
         public DatabaseContext()
         {
-            Database.SetInitializer(new CreateDatabaseIfNotExists<DatabaseContext>());
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<DatabaseContext>());
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
