@@ -10,5 +10,7 @@ namespace TangerineCRM.WebUI.Models
         public Product SingleProduct { get; set; }
         public IEnumerable<SelectListItem> SelectList { get; set; }
 
+        public Store SelectedStore { get; set; }
+
     }
 }

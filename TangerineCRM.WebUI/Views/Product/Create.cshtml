@@ -17,7 +17,7 @@
                 @Html.TextBoxFor(x => x.SingleProduct.Price, new { @class = "fadeIn second", @name = "Cena", @placeholder = "Cena" });
                 //@Html.ValidationMessageFor();
                 <br />
-                @Html.DropDownList("list", new SelectList(Model.SelectList))
+                @Html.DropDownListFor(x => x.SelectedStore, Model.SelectList);
                 <input type="submit" class="fadeIn fourth" value="Dodaj">
             }
             <!-- Remind Passowrd -->
