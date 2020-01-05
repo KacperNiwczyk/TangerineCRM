@@ -5,7 +5,6 @@ using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 using TangerineCRM.Core.Entities;
-using TangerineCRM.DataAccess.Core.Contexts;
 
 namespace TangerineCRM.Core.DataAccess
 {
@@ -55,9 +54,9 @@ namespace TangerineCRM.Core.DataAccess
                 IQueryable<TEntity> dbQuery = context.Set<TEntity>();
 
                 foreach (Expression<Func<TEntity, object>> navigationProperty in navigationProperties)
-                    dbQuery = dbQuery.Include<TEntity, object>(navigationProperty);
+                    dbQuery = dbQuery.Include(navigationProperty);
 
-                return filter != null ? dbQuery.AsNoTracking().Where(filter).ToList() : dbQuery.AsNoTracking().ToList();   
+                return filter != null ? dbQuery.AsNoTracking().Where(filter).ToList() : dbQuery.AsNoTracking().ToList();
             }
         }
 

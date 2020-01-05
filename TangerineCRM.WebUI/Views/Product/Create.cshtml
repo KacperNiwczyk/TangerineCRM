@@ -1,0 +1,25 @@
+﻿@model TangerineCRM.WebUI.Models.ProductViewModel
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Styles.Render("~/Content/login")
+
+<h2>Create</h2>
+<body>
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <!-- Login Form -->
+            @using (Html.BeginForm("Add", "Product", FormMethod.Post))
+            {
+                @Html.TextBoxFor(x => x.SingleProduct.ProductName, new { @class = "fadeIn second", @name = "Nazwa", @placeholder = "Nazwa" });
+                //@Html.ValidationMessageFor();
+                @Html.TextBoxFor(x => x.SingleProduct.Price, new { @class = "fadeIn second", @name = "Cena", @placeholder = "Cena" });
+                //@Html.ValidationMessageFor();
+                <br />
+                <input type="submit" class="fadeIn fourth" value="Dodaj">
+            }
+            <!-- Remind Passowrd -->
+        </div>
+    </div>
+</body>

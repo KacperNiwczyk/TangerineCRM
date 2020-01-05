@@ -1,6 +1,5 @@
 ﻿using System.Web.Mvc;
 using TangerineCRM.Business;
-using TangerineCRM.Business.Interfaces;
 using TangerineCRM.DataAccess.Core;
 using TangerineCRM.Entities.Base;
 using TangerineCRM.WebUI.Models;
@@ -9,7 +8,7 @@ namespace TangerineCRM.WebUI.Controllers
 {
     public class ProductController : Controller
     {
-        IProductService productManager;
+        ProductManager productManager;
 
         public ProductController()
         {
@@ -31,14 +30,24 @@ namespace TangerineCRM.WebUI.Controllers
 
         public ActionResult Delete(int id)
         {
-            productManager.Delete
+            Product p = productManager.GetBy(x => x.ProductId == id);
+            productManager.Delete(p);
 
-            return View()
+            return RedirectToAction("Index", "Product");
         }
 
-        public Product Find(int id)
+        public ActionResult Create()
         {
-            productManager.
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Add(Product p)
+        {
+            // TODO: Add validation
+            productManager.Add(p);
+
+            return RedirectToAction("Index", "Product");
         }
     }
 }

@@ -51,3 +51,4 @@ C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\bin\Debug\EntityFram
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\bin\Debug\EntityFramework.xml
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\obj\Debug\TangerineCRM.Core.csprojAssemblyReference.cache

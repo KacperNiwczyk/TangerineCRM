@@ -22,4 +22,12 @@ th {
  tr:hover {
     background-color: #ddd;
 }
-   
+
+.icon {
+    background: url('../Resources/delete icon.png');
+    display: block;
+    width: 24px;
+    height: 24px;
+    text-indent: -9999px;
+    text-align:center
+}

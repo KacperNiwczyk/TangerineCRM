@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using TangerineCRM.Business.Interfaces;
 using TangerineCRM.Business.Managers;
 using TangerineCRM.Core.Helpers.Enums;
@@ -21,6 +23,11 @@ namespace TangerineCRM.Business
         public List<Product> GetAll()
         {
             return _productDal.GetList(null, x => x.Store, x => x.Store.Address, x => x.Store.Contractor); // no way around 
+        }
+
+        public Product GetBy(Expression<Func<Product, bool>> filter)
+        {
+            return _productDal.Get(filter, x => x.Store, x => x.Store.Address, x => x.Store.Contractor);
         }
 
         public List<Product> GetAllByPrice(Order order)
