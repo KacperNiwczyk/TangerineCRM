@@ -1,4 +1,6 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Web.Mvc;
 using TangerineCRM.Business;
 using TangerineCRM.DataAccess.Core;
 using TangerineCRM.Entities.Base;
@@ -38,13 +40,26 @@ namespace TangerineCRM.WebUI.Controllers
 
         public ActionResult Create()
         {
-            return View();
+            var selectList = new List<SelectListItem>();
+
+            productManager.GetAll()
+                .Select(x => x.Store)
+                .ToList()
+                .ForEach(x => selectList.Add(new SelectListItem() { Text = x.StoreId.ToString(), Value = x.StoreId.ToString() }));
+
+            var productModel = new ProductViewModel()
+            {
+                SelectList = selectList
+            };
+
+            return View(productModel);
         }
 
         [HttpPost]
-        public ActionResult Add(Product p)
+        public ActionResult Add(ProductViewModel model)
         {
-            // TODO: Add validation
+            var p = model.SingleProduct;
+            p.Store = new Store();//Validation TODO 
             productManager.Add(p);
 
             return RedirectToAction("Index", "Product");
