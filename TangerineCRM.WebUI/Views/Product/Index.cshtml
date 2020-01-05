@@ -17,6 +17,26 @@
                     <th>ID Sklepu</th>
                 </tr>
             </thead>
+            @foreach(var product in Model.ProductList)
+            {
+            <tr>
+                <td>
+                    @product.ProductId
+                </td>
+                <td>
+                    @product.ProductName
+                </td>
+                <td>
+                    @product.Price
+                </td>
+                <td>
+                    @product.Store.StoreId
+                </td>
+                <td>
+
+                </td>
+            </tr>
+            }
         </table>
     </div>
 </body>

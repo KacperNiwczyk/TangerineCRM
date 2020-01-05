@@ -35,11 +35,16 @@ namespace TangerineCRM.Core.DataAccess
         }
 
 
-        public TEntity Get(Expression<Func<TEntity, bool>> filter, params Expression<Func<TEntity, object>>[] includes)
+        public TEntity Get(Expression<Func<TEntity, bool>> filter, params Expression<Func<TEntity, object>>[] navigationProperies)
         {
             using (var context = new TContext())
             {
-                return context.Set<TEntity>().IncludeMultiple(includes).SingleOrDefault(filter);
+                IQueryable<TEntity> dbQuery = context.Set<TEntity>();
+
+                foreach (Expression<Func<TEntity, object>> navigationProperty in navigationProperies)
+                    dbQuery = dbQuery.Include(navigationProperty);
+
+                return dbQuery.AsNoTracking().Where(filter).FirstOrDefault();
             }
         }
 

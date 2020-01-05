@@ -39,7 +39,7 @@ body {
   }
 
   #page-content-wrapper {
-    min-width: 0;
+    min-width: 100%;
     width: 100%;
   }
 
