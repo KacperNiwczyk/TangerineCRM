@@ -35,7 +35,8 @@
                     @product.Store.StoreId
                 </td>
                 <td>
-                    <a href="@Url.Action("Delete", "Product", new {id = product.ProductId})" class="icon"/>
+                    <a href="@Url.Action("Update", "Product", new {id = product.ProductId})" class="icon-update" />
+                    <a href="@Url.Action("Delete", "Product", new {id = product.ProductId})" class="icon-delete" />
                 </td>
             </tr>
             }

@@ -1,6 +1,6 @@
-﻿table, th, td{
-    border:1px solid black;
-    padding:15px;
+﻿table, th, td {
+    border: 1px solid #ddd;
+    padding: 15px;
 }
 
 table {
@@ -23,11 +23,24 @@ th {
     background-color: #ddd;
 }
 
-.icon {
-    background: url('../Resources/delete icon.png');
-    display: block;
+.icon-delete {
+    background-image: url('../Resources/delete icon.png');
+    display: inline-block;
     width: 24px;
     height: 24px;
     text-indent: -9999px;
-    text-align:center
+    text-align:left;
+    margin-left:10px;
+    
+}
+
+.icon-update {
+    background-image: url('../Resources/edit icon.png');
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    text-indent: -9999px;
+    text-align: right;
+    margin-right:10px;
+        
 }
