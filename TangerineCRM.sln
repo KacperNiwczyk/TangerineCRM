@@ -13,28 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TangerineCRM.Core", "Tanger
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TangerineCRM.ConsoleUI", "TangerineCRM.ConsoleUI\TangerineCRM.ConsoleUI.csproj", "{4DF42526-1B06-4943-B405-97CF7BF2C686}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "TangerineCRM.WCFService", "TangerineCRM.WCFService\", "{77D86F0E-9BF4-443E-BFD9-DCEF84FCE87B}"
-	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_50994"
-		Debug.AspNetCompiler.PhysicalPath = "TangerineCRM.WCFService\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50994\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_50994"
-		Release.AspNetCompiler.PhysicalPath = "TangerineCRM.WCFService\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50994\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "50994"
-		SlnRelativePath = "TangerineCRM.WCFService\"
-		DefaultWebSiteLanguage = "Visual C#"
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TangerineCRM.WebUI", "TangerineCRM.WebUI\TangerineCRM.WebUI.csproj", "{AF4F9B18-58C9-4D98-8677-DA03164A6452}"
 EndProject
 Global
@@ -63,10 +41,6 @@ Global
 		{4DF42526-1B06-4943-B405-97CF7BF2C686}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DF42526-1B06-4943-B405-97CF7BF2C686}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DF42526-1B06-4943-B405-97CF7BF2C686}.Release|Any CPU.Build.0 = Release|Any CPU
-		{77D86F0E-9BF4-443E-BFD9-DCEF84FCE87B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{77D86F0E-9BF4-443E-BFD9-DCEF84FCE87B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{77D86F0E-9BF4-443E-BFD9-DCEF84FCE87B}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{77D86F0E-9BF4-443E-BFD9-DCEF84FCE87B}.Release|Any CPU.Build.0 = Debug|Any CPU
 		{AF4F9B18-58C9-4D98-8677-DA03164A6452}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AF4F9B18-58C9-4D98-8677-DA03164A6452}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF4F9B18-58C9-4D98-8677-DA03164A6452}.Release|Any CPU.ActiveCfg = Release|Any CPU

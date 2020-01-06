@@ -7,6 +7,7 @@ namespace TangerineCRM.DataAccess.Core.Mapping
     {
         public StoreMapping()
         {
+            HasKey(x => x.StoreId);
         }
     }
 }

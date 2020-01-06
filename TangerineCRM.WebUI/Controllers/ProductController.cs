@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Web.Mvc;
 using TangerineCRM.Business;
+using TangerineCRM.Business.Managers;
 using TangerineCRM.DataAccess.Core;
 using TangerineCRM.Entities.Base;
 using TangerineCRM.WebUI.Models;
@@ -11,16 +11,18 @@ namespace TangerineCRM.WebUI.Controllers
     public class ProductController : Controller
     {
         ProductManager productManager;
+        StoreManager storeManager;
 
         public ProductController()
         {
             productManager = new ProductManager(new ProductDal());
+            storeManager = new StoreManager(new StoreDal());
         }
         // GET: Product
         public ActionResult Index()
         {
 
-            productManager.Add(new Product() { ProductName = "Mandarynki", Store = new Store() });
+            productManager.Add(new Product() { ProductName = "Mandarynki", Store = new Store() { StoreName = "Biedronka" } });//TODO: Delete
 
             var productModel = new ProductViewModel()
             {
@@ -42,10 +44,8 @@ namespace TangerineCRM.WebUI.Controllers
         {
             var selectList = new List<SelectListItem>();
 
-            productManager.GetAll()
-                .Select(x => x.Store)
-                .ToList()
-                .ForEach(x => selectList.Add(new SelectListItem() { Text = x.StoreId.ToString(), Value = x.StoreId.ToString() }));
+            storeManager.GetAll()
+                .ForEach(x => selectList.Add(new SelectListItem() { Text = $"{x.StoreId.ToString()} {x.StoreName}", Value = x.StoreId.ToString() }));
 
             var productModel = new ProductViewModel()
             {
@@ -59,7 +59,8 @@ namespace TangerineCRM.WebUI.Controllers
         public ActionResult Add(ProductViewModel model)
         {
             var p = model.SingleProduct;
-            p.Store = new Store();//Validation TODO 
+            var storeId = int.Parse(model.SelectedStoreID);
+            p.Store = storeManager.GetBy(x => x.StoreId == storeId);
             productManager.Add(p);
 
             return RedirectToAction("Index", "Product");

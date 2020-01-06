@@ -5,6 +5,7 @@ namespace TangerineCRM.Entities.Base
     public class Store : IEntity
     {
         public int StoreId { get; set; }
+        public string StoreName { get; set; }
 
         public virtual Address Address { get; set; }
 
