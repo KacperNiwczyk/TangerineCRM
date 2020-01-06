@@ -3,6 +3,7 @@ using System.Web.Mvc;
 using TangerineCRM.Business;
 using TangerineCRM.Business.Managers;
 using TangerineCRM.DataAccess.Core;
+using TangerineCRM.DataAccess.Core.Contexts;
 using TangerineCRM.Entities.Base;
 using TangerineCRM.WebUI.Models;
 
@@ -12,12 +13,13 @@ namespace TangerineCRM.WebUI.Controllers
     {
         ProductManager productManager;
         StoreManager storeManager;
-
+        DatabaseContext context = new DatabaseContext();
         public ProductController()
         {
-            productManager = new ProductManager(new ProductDal());
-            storeManager = new StoreManager(new StoreDal());
+            productManager = new ProductManager(new ProductDal(context));
+            storeManager = new StoreManager(new StoreDal(context));
         }
+
         // GET: Product
         public ActionResult Index()
         {

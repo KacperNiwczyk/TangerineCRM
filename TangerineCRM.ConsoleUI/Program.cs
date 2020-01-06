@@ -2,6 +2,7 @@
 using TangerineCRM.Business;
 using TangerineCRM.Business.Managers;
 using TangerineCRM.DataAccess.Core;
+using TangerineCRM.DataAccess.Core.Contexts;
 using TangerineCRM.Entities.Base;
 
 namespace TangerineCRM.ConsoleUI
@@ -10,9 +11,9 @@ namespace TangerineCRM.ConsoleUI
     {
         static void Main(string[] args)
         {
-
-            ProductManager productManager = new ProductManager(new ProductDal());
-            StoreManager storeManager = new StoreManager(new StoreDal());
+            DatabaseContext context = new DatabaseContext();
+            ProductManager productManager = new ProductManager(new ProductDal(context));
+            StoreManager storeManager = new StoreManager(new StoreDal(context));
 
             productManager.Add(new Product
             {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,5 +13,9 @@ namespace TangerineCRM.DataAccess
 {
     public class AddressDal : EntityRepositoryBase<Address, DatabaseContext>, IAddressDal
     {
+        public AddressDal(DbContext context) : base (context)
+        {
+
+        }
     }
 }
