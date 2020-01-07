@@ -70,6 +70,7 @@ namespace TangerineCRM.WebUI.Controllers
         {
             var p = model.SingleProduct;
             p.Store = GetStoreById(model.SelectedStoreID);
+            p.StoreID = int.Parse(model.SelectedStoreID);
             productManager.Update(p);
 
             return RedirectToAction("Index", "Product");

@@ -8,6 +8,7 @@ namespace TangerineCRM.Entities.Base
         public string ProductName { get; set; }
         public decimal Price { get; set; }
 
+        public virtual int StoreID { get; set; }
         public virtual Store Store { get; set; }
     }
 }

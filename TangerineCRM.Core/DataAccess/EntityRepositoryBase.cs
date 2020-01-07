@@ -58,19 +58,10 @@ namespace TangerineCRM.Core.DataAccess
 
         }
 
-        public TEntity Update(TEntity entity,  IEntity[] objects = null)
+        public TEntity Update(TEntity entity)
         {
             var updatedEntity = _context.Entry(entity);
             updatedEntity.State = EntityState.Modified;
-
-            if(objects != null)
-            {
-                foreach(var relatedObject in objects)
-                {
-                _context.Entry(relatedObject).State = EntityState.Modified;
-                }
-            }
-
             _context.SaveChanges();
             return entity;
         }
