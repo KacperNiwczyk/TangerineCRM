@@ -23,8 +23,7 @@ namespace TangerineCRM.WebUI.Controllers
         // GET: Product
         public ActionResult Index()
         {
-
-            productManager.Add(new Product() { ProductName = "Mandarynki", Store = new Store() { StoreName = "Biedronka" } });//TODO: Delete
+            productManager.Add(new Product() { ProductName = "Mandarynki", Store = new Store() { StoreName = "Biedronka", Address = new Address() { City = "Zielona Góra", Postcode = "96-523", Street = "Wyszyńskiego " } } });//TODO: Delete
 
             var productModel = new ProductViewModel()
             {
@@ -44,28 +43,63 @@ namespace TangerineCRM.WebUI.Controllers
 
         public ActionResult Create()
         {
-            var selectList = new List<SelectListItem>();
+            var productModel = new ProductViewModel()
+            {
+                SelectList = GetSelectList()
+            };
 
-            storeManager.GetAll()
-                .ForEach(x => selectList.Add(new SelectListItem() { Text = $"{x.StoreId.ToString()} {x.StoreName}", Value = x.StoreId.ToString() }));
+            return View(productModel);
+        }
+
+        public ActionResult Update(int id)
+        {
+            Product p = productManager.GetBy(x => x.ProductId == id);
 
             var productModel = new ProductViewModel()
             {
-                SelectList = selectList
+                SingleProduct = p,
+                //SelectedStoreID = p.Store.StoreId.ToString(),
+                SelectList = GetSelectList()
             };
 
             return View(productModel);
         }
 
         [HttpPost]
+        public ActionResult Update(ProductViewModel model)
+        {
+            var p = model.SingleProduct;
+            p.Store = GetStoreById(model.SelectedStoreID);
+            productManager.Update(p);
+
+            return RedirectToAction("Index", "Product");
+        }
+
+        [HttpPost]
         public ActionResult Add(ProductViewModel model)
         {
             var p = model.SingleProduct;
-            var storeId = int.Parse(model.SelectedStoreID);
-            p.Store = storeManager.GetBy(x => x.StoreId == storeId);
+            p.Store = GetStoreById(model.SelectedStoreID);
             productManager.Add(p);
 
             return RedirectToAction("Index", "Product");
+        }
+
+        private List<SelectListItem> GetSelectList()
+        {
+            var selectList = new List<SelectListItem>();
+
+            storeManager.GetAll()
+                .ForEach(x => selectList.Add(new SelectListItem() { Text = $"{x.StoreId.ToString()} {x.StoreName} {x.Address.Street} {x.Address.City}", Value = x.StoreId.ToString() }));
+
+            return selectList;
+        }
+
+        private Store GetStoreById(string storeId)
+        {
+            var Id = int.Parse(storeId);
+
+            return storeManager.GetBy(x => x.StoreId == Id);
         }
     }
 }

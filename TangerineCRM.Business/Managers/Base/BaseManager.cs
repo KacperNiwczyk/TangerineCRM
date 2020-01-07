@@ -29,7 +29,7 @@ namespace TangerineCRM.Business.Managers
             _dal.Delete(t);
         }
 
-        public void Update(T t)
+        public virtual void Update(T t)
         {
             _dal.Update(t);
         }

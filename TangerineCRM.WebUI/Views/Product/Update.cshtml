@@ -1,0 +1,29 @@
+﻿@model TangerineCRM.WebUI.Models.ProductViewModel
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Styles.Render("~/Content/login")
+
+<h2>Update</h2>
+<body>
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <!-- Login Form -->
+            @using (Html.BeginForm("Update", "Product", FormMethod.Post))
+            {
+                @Html.HiddenFor(x => x.SingleProduct.ProductId)
+                @Html.EditorFor(x => x.SingleProduct.ProductName, new { @class = "fadeIn second", @name = "Nazwa", @placeholder = "Nazwa" });
+                //@Html.ValidationMessageFor();
+                @Html.EditorFor(x => x.SingleProduct.Price, new { @class = "fadeIn second", @name = "Cena", @placeholder = "Cena" });
+                //@Html.ValidationMessageFor();
+                <br />
+                @Html.DropDownListFor(x => x.SelectedStoreID, Model.SelectList, new { @width = "100px" });
+                <input type="submit" class="fadeIn fourth" value="Zmień">
+            }
+            <!-- Remind Passowrd -->
+        </div>
+    </div>
+</body>
+
