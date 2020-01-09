@@ -1,15 +1,12 @@
 ﻿@model TangerineCRM.WebUI.Models.AppointmentViewModel
+@using TangerineCRM.Core.Helpers
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@Styles.Render("~/Content/table");
+@Styles.Render("~/Content/table")
 <h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
@@ -27,7 +24,9 @@
         <th>
             Rezultat
         </th>
-        <th></th>
+        <th>
+            <a href="@Url.Action("Create", "Appointment")">Dodaj</a>
+        </th>
     </tr>
 
 @foreach (var item in Model.AppointmentList) {
@@ -39,18 +38,17 @@
             @item.ContractorID
         </td>
         <td>
-            @item.Date
+            @item.Date.ToString("dd-MM-yyy")
         </td>
         <td>
-            @item.Type;
+            @item.Type.GetStringValue()
         </td>
         <td>
-            @item.Result
+            @item.Result.GetResultStringValue()
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.AppointmentId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.AppointmentId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.AppointmentId })
+            <a href="@Url.Action("Update", "Appointment", new {id = item.AppointmentId})" class="icon-update" />
+            <a href="@Url.Action("Delete", "Appointment", new {id = item.AppointmentId})" class="icon-delete" />
         </td>
     </tr>
 }

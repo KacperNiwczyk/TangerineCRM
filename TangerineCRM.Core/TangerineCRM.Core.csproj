@@ -125,6 +125,7 @@
     <Compile Include="Helpers\Enums\AppointmentType.cs" />
     <Compile Include="Helpers\Enums\Order.cs" />
     <Compile Include="Helpers\Enums\ValidationResult.cs" />
+    <Compile Include="Helpers\Extensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

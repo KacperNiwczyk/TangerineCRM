@@ -1,7 +1,16 @@
-﻿namespace TangerineCRM.Core.Helpers.Enums
+﻿using System.ComponentModel;
+
+namespace TangerineCRM.Core.Helpers.Enums
 {
     public enum AppointmentType
     {
-        SALE, BUY, INFO
+        [Description("Sprzedaż")]
+        SALE,
+        [Description("Zakup")]
+        BUY,
+        [Description("Informacyjne")]
+        INFO
     }
+
+
 }
