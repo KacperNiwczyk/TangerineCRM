@@ -1,8 +1,58 @@
-﻿
+﻿@model TangerineCRM.WebUI.Models.AppointmentViewModel
+
 @{
     ViewBag.Title = "Index";
-  
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Styles.Render("~/Content/table");
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+          Nr klienta
+        </th>
+        <th>
+          Nr przedstawiciela 
+        </th>
+        <th>
+            Data
+        </th>
+        <th>
+            Typ
+        </th>
+        <th>
+            Rezultat
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.AppointmentList) {
+    <tr>
+        <td>
+            @item.SalesRepresentativeID
+        </td>
+        <td>
+            @item.ContractorID
+        </td>
+        <td>
+            @item.Date
+        </td>
+        <td>
+            @item.Type;
+        </td>
+        <td>
+            @item.Result
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AppointmentId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AppointmentId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AppointmentId })
+        </td>
+    </tr>
 }
 
-<h2>Index spotkania</h2>
-
+</table>

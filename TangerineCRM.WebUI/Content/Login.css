@@ -64,7 +64,9 @@ h2 {
     border-radius: 0 0 10px 10px;
 }
 
-
+select, option {
+    text-align:center
+}
 
 /* TABS */
 
@@ -166,11 +168,6 @@ input[type=password] {
         color: #cccccc;
     }
 
-select, option {
-    width: 100%;
-    text-align: center;
-    padding-left: 50%;
-}
 
 
 /* ANIMATIONS */

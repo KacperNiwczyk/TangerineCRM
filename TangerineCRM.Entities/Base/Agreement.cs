@@ -7,7 +7,10 @@ namespace TangerineCRM.Entities.Base
     {
         public int AgreementId { get; set; }
 
+        public virtual int ContractorID { get; set; }
         public virtual Contractor Contractor { get; set; }
+
+        public virtual int SalesRepresentativeID { get; set; }
         public virtual SalesRepresentative SalesRepresentative { get; set; }
         public DateTime Date { get; set; }
 

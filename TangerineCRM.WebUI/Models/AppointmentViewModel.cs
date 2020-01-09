@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using TangerineCRM.Entities.Base;
 
 namespace TangerineCRM.WebUI.Models
 {
     public class AppointmentViewModel
     {
-        public Appointment AppointmentModel { get; set; }
+        public List<Appointment> AppointmentList { get; set; }
+
+        public Appointment SingleAppointment { get; set; }
     }
 }

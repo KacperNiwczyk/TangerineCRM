@@ -23,7 +23,7 @@ namespace TangerineCRM.WebUI.Controllers
         // GET: Product
         public ActionResult Index()
         {
-            productManager.Add(new Product() { ProductName = "Mandarynki", Store = new Store() { StoreName = "Biedronka", Address = new Address() { City = "Zielona Góra", Postcode = "96-523", Street = "Wyszyńskiego " } } });//TODO: Delete
+            productManager.Add(new Product() { ProductName = "Mandarynki", Store = new Store() { StoreName = "Biedronka", Address = new Address() { City = "Zielona Góra", Postcode = "96-523", Street = "Wyszyńskiego " }, Contractor = new Contractor() } });//TODO: Delete
 
             var productModel = new ProductViewModel()
             {
@@ -58,7 +58,7 @@ namespace TangerineCRM.WebUI.Controllers
             var productModel = new ProductViewModel()
             {
                 SingleProduct = p,
-                //SelectedStoreID = p.Store.StoreId.ToString(),
+                SelectedStoreID = p.Store.StoreId.ToString(),
                 SelectList = GetSelectList()
             };
 
