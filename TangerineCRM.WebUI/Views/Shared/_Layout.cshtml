@@ -5,13 +5,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
     <div class="d-flex" id="wrapper">
-        <!-- Sidebar -->
         <div class="bg-light border-right" id="sidebar-wrapper">
             @Html.ActionLink("Strona główna", "Index", "Home", routeValues: null, htmlAttributes: new { @class = "list-group-item list-group-item-action bg-light" })
             <div class="list-group list-group-flush">
@@ -60,8 +58,6 @@
                 <p>@RenderBody()</p>
             </div>
         </div>
-        <!-- /#page-content-wrapper -->
-
     </div>
     <!-- /#wrapper -->
     <!-- Bootstrap core JavaScript -->
