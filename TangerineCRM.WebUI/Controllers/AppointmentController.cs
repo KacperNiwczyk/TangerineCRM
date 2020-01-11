@@ -51,7 +51,7 @@ namespace TangerineCRM.WebUI.Controllers
         {
             var model = new AppointmentViewModel()
             {
-                SelectListContractor = GetContracotrDropDown(),
+                SelectListContractor = GetContractorDropDown(),
                 SelectListSalesRep = GetSalesRepresentativeDropDown(),
                 SelectListType = GetTypeDropDown(),
                 SelectListResult = GetResultDropDown()
@@ -78,7 +78,26 @@ namespace TangerineCRM.WebUI.Controllers
             return RedirectToAction("Index", "Appointment");
         }
 
-        private List<SelectListItem> GetContracotrDropDown()
+        public ActionResult Update(int id)
+        {
+            var a = appointmentManager.GetBy(x => x.AppointmentId == id);
+
+            var model = ParseValuesToModel(a);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Update(AppointmentViewModel model)
+        {
+            var a = ParseValuesFromModel(model);
+
+            appointmentManager.Update(a);
+
+            return RedirectToAction("Index", "Appointment");
+        }
+
+        private List<SelectListItem> GetContractorDropDown()
         {
             var list = new List<SelectListItem>();
 
@@ -141,6 +160,7 @@ namespace TangerineCRM.WebUI.Controllers
         {
             var appointment = new Appointment()
             {
+                AppointmentId = model.SingleAppointment.AppointmentId,
                 Contractor = GetContactor(model.SelectedContractorID, out int contratorId),
                 ContractorID = contratorId,
                 SalesRepresentative = GetRepsresentative(model.SelectedSalesRep, out int representativeId),
@@ -177,6 +197,24 @@ namespace TangerineCRM.WebUI.Controllers
             var contractorIdCopy = contractorId;
 
             return contractorManager.GetBy(x => x.ContractorId == contractorIdCopy);
+        }
+
+        private AppointmentViewModel ParseValuesToModel(Appointment a)
+        {
+            var model = new AppointmentViewModel()
+            {
+                SingleAppointment = a,
+                SelectListContractor = GetContractorDropDown(),
+                SelectedContractorID = a.ContractorID.ToString(),
+                SelectListSalesRep = GetSalesRepresentativeDropDown(),
+                SelectedSalesRep = a.SalesRepresentativeID.ToString(),
+                SelectListType = GetTypeDropDown(),
+                SelectedType = a.Type.ToString(),
+                SelectListResult = GetResultDropDown(),
+                SelectedResult = a.Result.ToString()
+            };
+
+            return model;
         }
     }
 }
