@@ -90,14 +90,8 @@ namespace TangerineCRM.WebUI.Controllers
 
         private Contractor ParseValuesFromModel(ContractorViewModel model)
         {
-            var contractor = new Contractor()
-            {
-                ContractorId = model.SingleContractor.ContractorId,
-                FirstName = model.SingleContractor.FirstName,
-                LastName = model.SingleContractor.LastName,
-                Discount = model.SingleContractor.Discount,
-                IsContracted = bool.Parse(model.SelectedIsContractedValue)
-            };
+            var contractor = model.SingleContractor;
+            contractor.IsContracted = bool.Parse(model.SelectedIsContractedValue);
 
             return contractor;
         }
