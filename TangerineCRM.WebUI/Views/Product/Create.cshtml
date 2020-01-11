@@ -7,9 +7,8 @@
 
 <h2>Create</h2>
 <body>
-    <div class="wrapper fadeInDown">
+    <div class="wrapper fadeInDown" style="align-items: flex-start">
         <div id="formContent">
-            <!-- Login Form -->
             @using (Html.BeginForm("Add", "Product", FormMethod.Post))
             {
                 @Html.TextBoxFor(x => x.SingleProduct.ProductName, new { @class = "fadeIn second", @name = "Nazwa", @placeholder = "Nazwa" });

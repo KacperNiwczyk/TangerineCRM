@@ -1,14 +1,12 @@
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.ConsoleUI\bin\Debug\TangerineCRM.ConsoleUI.exe.config
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.ConsoleUI\bin\Debug\TangerineCRM.ConsoleUI.exe
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.ConsoleUI\bin\Debug\TangerineCRM.ConsoleUI.pdb
-C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.ConsoleUI\obj\Debug\TangerineCRM.ConsoleUI.csprojAssemblyReference.cache
-C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.ConsoleUI\obj\Debug\TangerineCRM.ConsoleUI.exe
-C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.ConsoleUI\obj\Debug\TangerineCRM.ConsoleUI.pdb
+C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.ConsoleUI\bin\Debug\EntityFramework.dll
+C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.ConsoleUI\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.ConsoleUI\bin\Debug\TangerineCRM.Business.dll
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.ConsoleUI\bin\Debug\TangerineCRM.Core.dll
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.ConsoleUI\bin\Debug\TangerineCRM.DataAccess.dll
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.ConsoleUI\bin\Debug\TangerineCRM.Entities.dll
-C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.ConsoleUI\bin\Debug\EntityFramework.dll
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.ConsoleUI\bin\Debug\TangerineCRM.Business.pdb
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.ConsoleUI\bin\Debug\TangerineCRM.Business.dll.config
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.ConsoleUI\bin\Debug\TangerineCRM.Core.pdb
@@ -18,6 +16,8 @@ C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.ConsoleUI\bin\Debug\Tange
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.ConsoleUI\bin\Debug\TangerineCRM.Entities.pdb
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.ConsoleUI\bin\Debug\TangerineCRM.Entities.dll.config
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.ConsoleUI\bin\Debug\EntityFramework.xml
-C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.ConsoleUI\obj\Debug\TangerineCRM.ConsoleUI.csproj.CopyComplete
-C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.ConsoleUI\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.ConsoleUI\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.ConsoleUI\obj\Debug\TangerineCRM.ConsoleUI.csprojAssemblyReference.cache
+C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.ConsoleUI\obj\Debug\TangerineCRM.ConsoleUI.csproj.CopyComplete
+C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.ConsoleUI\obj\Debug\TangerineCRM.ConsoleUI.exe
+C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.ConsoleUI\obj\Debug\TangerineCRM.ConsoleUI.pdb

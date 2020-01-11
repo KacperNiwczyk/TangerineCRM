@@ -6,15 +6,15 @@
 @Styles.Render("~/Content/Login")
 <h2>Create</h2>
 <body>
-    <div class="wrapper fadeInDown">
+    <div class="wrapper fadeInDown" style="align-items: flex-start">
         <div id="formContent">
             <!-- Login Form -->
             @using (Html.BeginForm("Add", "Appointment", FormMethod.Post))
             {
                 @Html.TextBoxFor(x => x.SingleAppointment.Type, new { @class = "fadeIn second", @name = "Typ", @placeholder = "Nazwa" });
-                //@Html.ValidationMessageFor();
+                
                 @Html.TextBoxFor(x => x.SingleAppointment.Result, new { @class = "fadeIn second", @name = "Cena", @placeholder = "Cena" });
-                //@Html.ValidationMessageFor();
+                
                 @Html.TextBoxFor(x => x.SingleAppointment.Date,  new { @class = "datepicker", @type = "date" });
                 <br />
                 //@Html.DropDownListFor(x => x.SelectedStoreID, Model.SelectList);

@@ -1,8 +1,8 @@
+C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\bin\Debug\TangerineCRM.Core.dll.config
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\bin\Debug\TangerineCRM.Core.dll
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\bin\Debug\TangerineCRM.Core.pdb
-C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\obj\Debug\TangerineCRM.Core.dll
-C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\obj\Debug\TangerineCRM.Core.pdb
-C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\bin\Debug\TangerineCRM.Core.dll.config
+C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\bin\Debug\EntityFramework.dll
+C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\bin\Debug\Microsoft.Bcl.HashCode.dll
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\bin\Debug\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -25,6 +25,8 @@ C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\bin\Debug\System.Mem
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\bin\Debug\System.Numerics.Vectors.dll
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\bin\Debug\EntityFramework.xml
+C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\bin\Debug\Microsoft.Bcl.HashCode.xml
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\bin\Debug\Microsoft.EntityFrameworkCore.Abstractions.xml
@@ -46,9 +48,7 @@ C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\bin\Debug\System.Mem
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\obj\Debug\TangerineCRM.Core.csproj.CopyComplete
-C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\bin\Debug\EntityFramework.dll
-C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\bin\Debug\EntityFramework.xml
-C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\obj\Debug\TangerineCRM.Core.csprojAssemblyReference.cache
+C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\obj\Debug\TangerineCRM.Core.csproj.CopyComplete
+C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\obj\Debug\TangerineCRM.Core.dll
+C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\obj\Debug\TangerineCRM.Core.pdb
