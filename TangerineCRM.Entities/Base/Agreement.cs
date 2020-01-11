@@ -1,5 +1,6 @@
 ﻿using System;
 using TangerineCRM.Core.Entities;
+using TangerineCRM.Core.Helpers.Enums;
 
 namespace TangerineCRM.Entities.Base
 {
@@ -16,9 +17,8 @@ namespace TangerineCRM.Entities.Base
 
         public decimal Value { get; set; }
 
-        public bool IsSales { get; set; }
+        public AgreementType Type { get; set; }
 
-        public bool IsFinished { get; set; }
     }
 
 }

@@ -42,6 +42,15 @@ th {
     height: 24px;
     text-indent: -9999px;
     text-align: right;
-    margin-right:10px;
-        
+    margin-right:10px;   
+}
+
+.icon-add {
+    background-image: url('../Resources/add icon.png');
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    text-indent: -9999px;
+    text-align: right;
+    margin-right: 10px;
 }

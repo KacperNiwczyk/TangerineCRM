@@ -129,6 +129,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AgreementController.cs" />
     <Compile Include="Controllers\AppointmentController.cs" />
+    <Compile Include="Controllers\ContractorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -139,6 +140,7 @@
     </Compile>
     <Compile Include="Models\AgreementViewModel.cs" />
     <Compile Include="Models\AppointmentViewModel.cs" />
+    <Compile Include="Models\ContractorViewModel.cs" />
     <Compile Include="Models\ProductViewModel.cs" />
     <Compile Include="Models\SalesRepresentativeViewModel.cs" />
     <Compile Include="Models\StoreViewModel.cs" />
@@ -158,6 +160,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\site.css" />
+    <Content Include="Resources\add icon.png" />
     <Content Include="Resources\delete icon.png" />
     <Content Include="Resources\edit icon.png" />
     <Content Include="Resources\logo.png" />
@@ -205,10 +208,13 @@
     <Content Include="Views\Product\Update.cshtml" />
     <Content Include="Views\Appointment\Create.cshtml" />
     <Content Include="Views\Appointment\Update.cshtml" />
+    <Content Include="Views\Agreement\Index.cshtml" />
+    <Content Include="Views\Agreement\Create.cshtml" />
+    <Content Include="Views\Agreement\Update.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Agreement\" />
+    <Folder Include="Views\Contractor\" />
     <Folder Include="Views\SalesRepresentative\" />
     <Folder Include="Views\Store\" />
   </ItemGroup>

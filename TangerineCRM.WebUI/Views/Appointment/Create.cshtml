@@ -12,39 +12,39 @@
             <!-- Login Form -->
             @using (Html.BeginForm("Add", "Appointment", FormMethod.Post))
             {
-             <div class="field">
-                 <label>Klient</label>
-                 <br />
-                @Html.DropDownListFor(x => x.SelectedContractorID, Model.SelectListContractor)
-             </div>
-              
-             <div class="field">
-                 <label>Przedstawiciel handlowy</label>
-                 <br />
-                 @Html.DropDownListFor(x => x.SelectedSalesRep, Model.SelectListSalesRep)
-                 <br />
-             </div>               
+                <div class="field">
+                    <label>Klient</label>
+                    <br />
+                    @Html.DropDownListFor(x => x.SelectedContractorID, Model.SelectListContractor)
+                </div>
 
-             <div class="field">
-                 <label>Data</label>
-                 <br />
-                 @Html.TextBoxFor(x => x.SingleAppointment.Date, new { @class = "datepicker picker", @type = "date"})
-                 <br />
-             </div>
+                <div class="field">
+                    <label>Przedstawiciel handlowy</label>
+                    <br />
+                    @Html.DropDownListFor(x => x.SelectedSalesRep, Model.SelectListSalesRep)
+                    <br />
+                </div>
 
-             <div class="field">
-                 <label>Typ spotkania</label>
-                 <br />
-                 @Html.DropDownListFor(x => x.SelectedType, Model.SelectListType)
-                 <br />
-             </div>
+                <div class="field">
+                    <label>Typ spotkania</label>
+                    <br />
+                    @Html.DropDownListFor(x => x.SelectedType, Model.SelectListType)
+                    <br />
+                </div>
 
-             <div class="field">
-                 <label>Rezultat</label>
-                 <br />
-                 @Html.DropDownListFor(x => x.SelectedResult, Model.SelectListResult)
-                 <br />
-             </div>
+                <div class="field">
+                    <label>Rezultat</label>
+                    <br />
+                    @Html.DropDownListFor(x => x.SelectedResult, Model.SelectListResult)
+                    <br />
+                </div>
+
+                <div class="field">
+                    <label>Data</label>
+                    <br />
+                    @Html.TextBoxFor(x => x.SingleAppointment.Date, new { @class = "datepicker picker", @type = "date" })
+                    <br />
+                </div>
 
                 <input type="submit" class="fadeIn fourth" value="Dodaj">
             }

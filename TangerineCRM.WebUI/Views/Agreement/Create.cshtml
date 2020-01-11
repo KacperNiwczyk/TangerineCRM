@@ -1,22 +1,22 @@
-﻿@model TangerineCRM.WebUI.Models.AppointmentViewModel
+﻿@model TangerineCRM.WebUI.Models.AgreementViewModel
 @{
-    ViewBag.Title = "Update";
+    ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 @Styles.Render("~/Content/Login")
 @Styles.Render("~/Content/dropdown")
-<h2>Edytuj</h2>
+<h2>Create</h2>
 <body>
     <div class="wrapper fadeInDown" style="align-items: flex-start">
         <div id="formContent">
             <!-- Login Form -->
-            @using (Html.BeginForm("Update", "Appointment", FormMethod.Post))
+            @using (Html.BeginForm("Add", "Agreement", FormMethod.Post))
             {
-                @Html.HiddenFor(x => x.SingleAppointment.AppointmentId)
                 <div class="field">
                     <label>Klient</label>
                     <br />
-                    @Html.DropDownListFor(x => x.SelectedContractorID, Model.SelectListContractor)
+                    @Html.DropDownListFor(x => x.SelectedContractor, Model.SelectListContractor)
                 </div>
 
                 <div class="field">
@@ -33,20 +33,16 @@
                     <br />
                 </div>
 
+                @Html.TextBoxFor(x => x.SingleAgreement.Value, new { @class = "fadeIn second", @name = "Wartość", @placeholder = "Wartość" });
+
                 <div class="field">
-                    <label>Rezultat</label>
+                    <label>Data</label>
                     <br />
-                    @Html.DropDownListFor(x => x.SelectedResult, Model.SelectListResult)
+                    @Html.TextBoxFor(x => x.SingleAgreement.Date, new { @class = "datepicker picker", @type = "date" })
                     <br />
                 </div>
 
-                <div class="field">
-                    <label>Data spotkania</label>
-                    <br />
-                    @Html.TextBoxFor(x => x.SingleAppointment.Date, new { @class = "datepicker picker", @type = "date", @Value = Model.SingleAppointment.Date.ToString("yyyy-MM-dd")})
-                    <br />
-                </div>
-                <input type="submit" class="fadeIn fourth" value="Zmień">
+                <input type="submit" class="fadeIn fourth" value="Dodaj">
             }
         </div>
     </div>

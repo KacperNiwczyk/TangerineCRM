@@ -1,4 +1,4 @@
-﻿@model TangerineCRM.WebUI.Models.AppointmentViewModel
+﻿@model TangerineCRM.WebUI.Models.AgreementViewModel
 @{
     ViewBag.Title = "Update";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -10,13 +10,13 @@
     <div class="wrapper fadeInDown" style="align-items: flex-start">
         <div id="formContent">
             <!-- Login Form -->
-            @using (Html.BeginForm("Update", "Appointment", FormMethod.Post))
+            @using (Html.BeginForm("Update", "Agreement", FormMethod.Post))
             {
-                @Html.HiddenFor(x => x.SingleAppointment.AppointmentId)
+                @Html.HiddenFor(x => x.SingleAgreement.AgreementId)
                 <div class="field">
                     <label>Klient</label>
                     <br />
-                    @Html.DropDownListFor(x => x.SelectedContractorID, Model.SelectListContractor)
+                    @Html.DropDownListFor(x => x.SelectedContractor, Model.SelectListContractor)
                 </div>
 
                 <div class="field">
@@ -27,25 +27,21 @@
                 </div>
 
                 <div class="field">
-                    <label>Typ spotkania</label>
+                    <label>Typ umowy</label>
                     <br />
                     @Html.DropDownListFor(x => x.SelectedType, Model.SelectListType)
                     <br />
                 </div>
 
                 <div class="field">
-                    <label>Rezultat</label>
+                    <label>Data</label>
                     <br />
-                    @Html.DropDownListFor(x => x.SelectedResult, Model.SelectListResult)
+                    @Html.TextBoxFor(x => x.SingleAgreement.Date, new { @class = "datepicker picker", @type = "date", @Value = Model.SingleAgreement.Date.ToString("yyyy-MM-dd") })
                     <br />
                 </div>
 
-                <div class="field">
-                    <label>Data spotkania</label>
-                    <br />
-                    @Html.TextBoxFor(x => x.SingleAppointment.Date, new { @class = "datepicker picker", @type = "date", @Value = Model.SingleAppointment.Date.ToString("yyyy-MM-dd")})
-                    <br />
-                </div>
+                @Html.TextBoxFor(x => x.SingleAgreement.Value, new { @class = "fadeIn second", @name = "Wartość umowy", @placeholder = "Wartość umowy" });
+
                 <input type="submit" class="fadeIn fourth" value="Zmień">
             }
         </div>

@@ -1,0 +1,65 @@
+﻿@model TangerineCRM.WebUI.Models.AgreementViewModel
+@using TangerineCRM.Core.Helpers
+@using TangerineCRM.Core.Helpers.Enums
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Styles.Render("~/Content/table")
+<h2>Index</h2>
+<table class="table">
+    <tr>
+        <th>
+            Nr <br />
+            klienta
+        </th>
+        <th>
+            Nr <br />
+            przedstawiciela
+        </th>
+        <th>
+            Data <br />
+            Zawarcia
+        </th>
+        <th>
+            Typ
+        </th>
+        <th>
+            Wartość
+        </th>
+        <th>
+            <a href="@Url.Action("Create", "Agreement")" class="icon-add" />
+        </th>
+    </tr>
+
+    @foreach(var item in Model.AgreementList)
+    {
+
+        string color = "Green";
+        if(item.Type == AgreementType.BUY)
+        {
+            color = "Red";
+        }
+        <tr>
+            <td>
+                @item.SalesRepresentativeID
+            </td>
+            <td>
+                @item.ContractorID
+            </td>
+            <td>
+                @item.Date.ToString("dd-MM-yyy")
+            </td>
+            <td>
+                @item.Type.GetStringValue()
+            </td>
+            <td style="color:@color">
+                @item.Value
+            </td>
+            <td>
+                <a href="@Url.Action("Update", "Agreement", new {id = item.AgreementId})" class="icon-update" />
+                <a href="@Url.Action("Delete", "Agreement", new {id = item.AgreementId})" class="icon-delete" />
+            </td>
+        </tr>
+    }
+</table>
