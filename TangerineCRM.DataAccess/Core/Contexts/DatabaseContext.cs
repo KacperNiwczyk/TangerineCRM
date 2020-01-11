@@ -9,7 +9,6 @@ namespace TangerineCRM.DataAccess.Core.Contexts
     {
         DbSet<Product> Products { get; set; }
         DbSet<User> Users { get; set; }
-        DbSet<Address> Addresses { get; set; }
         DbSet<Store> Stores { get; set; }
         DbSet<Agreement> Agreements { get; set; }
         DbSet<Appointment> Appointments { get; set; }
@@ -24,7 +23,6 @@ namespace TangerineCRM.DataAccess.Core.Contexts
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new ProductMapping());
-            modelBuilder.Configurations.Add(new AddressMapping());
             modelBuilder.Configurations.Add(new UserMapping());
             modelBuilder.Configurations.Add(new StoreMapping());
             modelBuilder.Configurations.Add(new SalesRepresentativeMapping());

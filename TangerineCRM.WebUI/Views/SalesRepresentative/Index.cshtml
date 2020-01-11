@@ -1,0 +1,46 @@
+﻿@model TangerineCRM.WebUI.Models.SalesRepresentativeViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Styles.Render("~/Content/table")
+<h2>Index</h2>
+<table class="table">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Imię
+        </th>
+        <th>
+            Nazwisko
+        </th>
+        <th>
+            <a href="@Url.Action("Create", "SalesRepresentative")" class="icon-add" />
+        </th>
+    </tr>
+
+    @foreach (var item in Model.RepresentativesList)
+    {
+        <tr>
+            <td>
+                @item.SalesRepresentativeId
+            </td>
+            <td>
+                @item.FirstName
+            </td>
+            <td>
+                @item.LastName
+            </td>
+            <td>
+                <a href="@Url.Action("Update", "SalesRepresentative", new {id = item.SalesRepresentativeId})" class="icon-update" />
+                <a href="@Url.Action("Delete", "SalesRepresentative", new {id = item.SalesRepresentativeId})" class="icon-delete" />
+            </td>
+        </tr>
+    }
+    </table>
+
+
+
+

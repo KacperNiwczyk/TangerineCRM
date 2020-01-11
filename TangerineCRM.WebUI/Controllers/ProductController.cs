@@ -23,7 +23,7 @@ namespace TangerineCRM.WebUI.Controllers
         // GET: Product
         public ActionResult Index()
         {
-            productManager.Add(new Product() { ProductName = "Mandarynki", Store = new Store() { StoreName = "Biedronka", Address = new Address() { City = "Zielona Góra", Postcode = "96-523", Street = "Wyszyńskiego " }, Contractor = new Contractor() } });//TODO: Delete
+            productManager.Add(new Product() { ProductName = "Mandarynki", Store = new Store() { StoreName = "Biedronka", City = "Zielona Góra", Postcode = "96-523", Street = "Wyszyńskiego ", Contractor = new Contractor() } });//TODO: Delete
 
             var productModel = new ProductViewModel()
             {
@@ -91,7 +91,7 @@ namespace TangerineCRM.WebUI.Controllers
             var selectList = new List<SelectListItem>();
 
             storeManager.GetAll()
-                .ForEach(x => selectList.Add(new SelectListItem() { Text = $"{x.StoreId.ToString()} {x.StoreName} {x.Address.Street} {x.Address.City}", Value = x.StoreId.ToString() }));
+                .ForEach(x => selectList.Add(new SelectListItem() { Text = $"{x.StoreId.ToString()} {x.StoreName} {x.Street} {x.City}", Value = x.StoreId.ToString() }));
 
             return selectList;
         }

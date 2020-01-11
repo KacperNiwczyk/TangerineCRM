@@ -121,12 +121,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\AddressDal.cs" />
     <Compile Include="Core\AgreementDal.cs" />
     <Compile Include="Core\AppointmentDal.cs" />
     <Compile Include="Core\Contexts\DatabaseContext.cs" />
     <Compile Include="Core\ContractorDal.cs" />
-    <Compile Include="Core\Mapping\AddressMapping.cs" />
     <Compile Include="Core\Mapping\AgreementMapping.cs" />
     <Compile Include="Core\Mapping\AppointmentMapping.cs" />
     <Compile Include="Core\Mapping\ContractorMapping.cs" />

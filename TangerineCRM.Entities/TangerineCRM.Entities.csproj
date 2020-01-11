@@ -42,7 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base\Address.cs" />
     <Compile Include="Base\Agreement.cs" />
     <Compile Include="Base\Appointment.cs" />
     <Compile Include="Base\Contractor.cs" />

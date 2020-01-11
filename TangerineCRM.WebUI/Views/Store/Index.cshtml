@@ -1,0 +1,71 @@
+﻿@model TangerineCRM.WebUI.Models.StoreViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Styles.Render("~/Content/table")
+<h2>Index</h2>
+<table class="table">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Nazwa
+        </th>
+        <th>
+            Nr<br />
+            Właściciela
+        </th>
+        <th>
+            Miasto
+        </th>
+        <th>
+            Ulica
+        </th>
+        <th>
+            Kod pocztowy
+        </th>
+        <th>
+            Telefon
+        </th>
+        <th>
+            <a href="@Url.Action("Create", "Store")" class="icon-add" />
+        </th>
+    </tr>
+
+    @foreach (var item in Model.StoreList)
+    {
+        <tr>
+            <td>
+                @item.StoreId
+            </td>
+            <td>
+                @item.StoreName
+            </td>
+            <td>
+                @item.ContractorID
+            </td>
+            <td>
+                @item.City
+            </td>
+            <td>
+                @item.Street
+            </td>
+            <td>
+                @item.Postcode
+            </td>
+            <td>
+                @item.Telephone
+            </td>
+            <td>
+                <a href="@Url.Action("Update", "Store", new {id = item.StoreId})" class="icon-update" />
+                <a href="@Url.Action("Delete", "Store", new {id = item.StoreId})" class="icon-delete" />
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+

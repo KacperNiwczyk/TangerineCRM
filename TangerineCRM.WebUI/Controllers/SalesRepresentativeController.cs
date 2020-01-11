@@ -61,5 +61,14 @@ namespace TangerineCRM.WebUI.Controllers
 
             return View(model);
         }
+
+        [HttpPost]
+        public ActionResult Update(SalesRepresentativeViewModel model)
+        {
+            var rep = model.SingleRepresentative;
+            representativeManager.Update(rep);
+
+            return RedirectToAction("Index", "SalesRepresentative");
+        }
     }
 }

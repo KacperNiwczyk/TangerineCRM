@@ -214,11 +214,13 @@
     <Content Include="Views\Contractor\Index.cshtml" />
     <Content Include="Views\Contractor\Create.cshtml" />
     <Content Include="Views\Contractor\Update.cshtml" />
+    <Content Include="Views\SalesRepresentative\Index.cshtml" />
+    <Content Include="Views\SalesRepresentative\Create.cshtml" />
+    <Content Include="Views\SalesRepresentative\Update.cshtml" />
+    <Content Include="Views\Store\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\SalesRepresentative\" />
-    <Folder Include="Views\Store\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
