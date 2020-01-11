@@ -211,10 +211,12 @@
     <Content Include="Views\Agreement\Index.cshtml" />
     <Content Include="Views\Agreement\Create.cshtml" />
     <Content Include="Views\Agreement\Update.cshtml" />
+    <Content Include="Views\Contractor\Index.cshtml" />
+    <Content Include="Views\Contractor\Create.cshtml" />
+    <Content Include="Views\Contractor\Update.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Contractor\" />
     <Folder Include="Views\SalesRepresentative\" />
     <Folder Include="Views\Store\" />
   </ItemGroup>

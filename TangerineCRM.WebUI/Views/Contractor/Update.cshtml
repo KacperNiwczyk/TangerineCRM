@@ -1,0 +1,33 @@
+﻿@model TangerineCRM.WebUI.Models.ContractorViewModel
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Styles.Render("~/Content/login")
+@Styles.Render("~/Content/dropdown")
+
+<h2>Create</h2>
+<body>
+    <div class="wrapper fadeInDown" style="align-items: flex-start">
+        <div id="formContent">
+            @using (Html.BeginForm("Update", "Contractor", FormMethod.Post))
+            {
+                @Html.HiddenFor(x => x.SingleContractor.ContractorId)
+                @Html.EditorFor(x => x.SingleContractor.FirstName, new { @class = "fadeIn second", @name = "Imię", @placeholder = "Imię" });
+                //@Html.ValidationMessageFor();
+                @Html.EditorFor(x => x.SingleContractor.LastName, new { @class = "fadeIn second", @name = "Nazwisko", @placeholder = "Nazwisko" });
+                //@Html.ValidationMessageFor();
+                @Html.EditorFor(x => x.SingleContractor.Discount, new { @class = "fadeIn second", @name = "Rabat %", @placeholder = "Rabat %" })
+                <br />
+                <div class="field fadeIn second">
+                    <label> Zakontraktowany? </label>
+                    <br />
+                    @Html.DropDownListFor(x => x.SelectedIsContractedValue, Model.IsContractedList)
+                </div>
+
+                <input type="submit" class="fadeIn fourth" value="Zmień">
+            }
+            <!-- Remind Passowrd -->
+        </div>
+    </div>
+</body>

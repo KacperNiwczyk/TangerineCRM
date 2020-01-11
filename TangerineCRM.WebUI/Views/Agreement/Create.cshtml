@@ -33,14 +33,14 @@
                     <br />
                 </div>
 
-                @Html.TextBoxFor(x => x.SingleAgreement.Value, new { @class = "fadeIn second", @name = "Wartość", @placeholder = "Wartość" });
-
                 <div class="field">
                     <label>Data</label>
                     <br />
                     @Html.TextBoxFor(x => x.SingleAgreement.Date, new { @class = "datepicker picker", @type = "date" })
                     <br />
                 </div>
+
+                @Html.TextBoxFor(x => x.SingleAgreement.Value, new { @class = "fadeIn second", @name = "Wartość", @placeholder = "Wartość" });
 
                 <input type="submit" class="fadeIn fourth" value="Dodaj">
             }

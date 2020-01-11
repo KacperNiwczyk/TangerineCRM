@@ -1,0 +1,57 @@
+﻿@model TangerineCRM.WebUI.Models.ContractorViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using TangerineCRM.Core.Helpers
+@Styles.Render("~/Content/table")
+<h2>Index</h2>
+<table class="table">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Imię
+        </th>
+        <th>
+            Nazwisko
+        </th>
+        <th>
+            Rabat cenowy
+        </th>
+        <th>
+            Zakontraktowany? 
+        </th>
+        <th>
+            <a href="@Url.Action("Create", "Contractor")" class="icon-add" />
+        </th>
+    </tr>
+
+    @foreach (var item in Model.ContractorList)
+    {
+        <tr>
+            <td>
+                @item.ContractorId
+            </td>
+            <td>
+                @item.FirstName
+            </td>
+            <td>
+                @item.LastName
+            </td>
+            <td>
+                @item.Discount.ToString()%
+            </td>
+            <td>
+                @item.IsContracted.GetPolishValue()
+            </td>
+            <td>
+                <a href="@Url.Action("Update", "Contractor", new {id = item.ContractorId})" class="icon-update" />
+                <a href="@Url.Action("Delete", "Contractor", new {id = item.ContractorId})" class="icon-delete" />
+            </td>
+        </tr>
+    }
+
+</table>
+

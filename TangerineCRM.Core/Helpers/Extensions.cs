@@ -21,5 +21,10 @@ namespace TangerineCRM.Core.Helpers
 
             return attribs.Length > 0 ? attribs[0].Description : null;
         }
+
+        public static string GetPolishValue(this bool value)
+        {
+            return value ? "Tak" : "Nie";
+        }
     }
 }
