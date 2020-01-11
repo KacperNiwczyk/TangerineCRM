@@ -8,12 +8,10 @@ namespace TangerineCRM.WebUI.Models
     {
         public Store SingleStore { get; set; }
 
-        public Address Address { get; set; }
-
         public List<Store> StoreList { get; set; }
 
         public IEnumerable<SelectListItem> ContractorSelectList { get; set; }
 
-        public string SelectedContractor { get; set; };
+        public string SelectedContractor { get; set; }
     }
 }

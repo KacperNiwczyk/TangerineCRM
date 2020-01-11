@@ -18,12 +18,12 @@ namespace TangerineCRM.Business.Managers
 
         public List<Store> GetAll()
         {
-            return _storeDal.GetList(null, x => x.Address, x => x.Contractor);
+            return _storeDal.GetList(null, x => x.Contractor);
         }
 
         public Store GetBy(Expression<Func<Store, bool>> filter)
         {
-            return _storeDal.Get(filter, x => x.Address, x => x.Contractor);
+            return _storeDal.Get(filter, x => x.Contractor);
         }
 
         protected override ValidationResult Validate(Store t)

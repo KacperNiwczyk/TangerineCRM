@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\IAddressService.cs" />
     <Compile Include="Interfaces\IAgreementService.cs" />
     <Compile Include="Interfaces\IAppointmentService.cs" />
     <Compile Include="Interfaces\IContractorService.cs" />
@@ -50,7 +49,6 @@
     <Compile Include="Interfaces\IService.cs" />
     <Compile Include="Interfaces\IStoreService.cs" />
     <Compile Include="Interfaces\IUserService.cs" />
-    <Compile Include="Managers\AddressManager.cs" />
     <Compile Include="Managers\AgreementManager.cs" />
     <Compile Include="Managers\AppointmentManager.cs" />
     <Compile Include="Managers\Base\BaseManager.cs" />

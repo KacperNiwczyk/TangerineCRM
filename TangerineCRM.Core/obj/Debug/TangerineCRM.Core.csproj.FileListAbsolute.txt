@@ -48,7 +48,6 @@ C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\bin\Debug\System.Mem
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\obj\Debug\TangerineCRM.Core.csprojAssemblyReference.cache
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\obj\Debug\TangerineCRM.Core.csproj.CopyComplete
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\obj\Debug\TangerineCRM.Core.dll
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Core\obj\Debug\TangerineCRM.Core.pdb

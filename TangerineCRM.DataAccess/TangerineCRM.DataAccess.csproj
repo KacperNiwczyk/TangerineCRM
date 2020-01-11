@@ -136,7 +136,6 @@
     <Compile Include="Core\SalesRepresentativeDal.cs" />
     <Compile Include="Core\StoreDal.cs" />
     <Compile Include="Core\UserDal.cs" />
-    <Compile Include="Interfaces\IAddressDal.cs" />
     <Compile Include="Interfaces\IAgreementDal.cs" />
     <Compile Include="Interfaces\IAppointmentDal.cs" />
     <Compile Include="Interfaces\IContractorDal.cs" />

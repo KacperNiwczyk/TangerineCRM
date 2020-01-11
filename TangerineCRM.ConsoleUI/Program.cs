@@ -21,7 +21,7 @@ namespace TangerineCRM.ConsoleUI
                 Price = 50,
                 ProductId = 1,
                 Store = new Store()
-                { Address = new Address() { Street = "test" }, Contractor = new Contractor() }
+                { Street = "test", Contractor = new Contractor() }
             });
 
             var store = storeManager.GetBy(x => x.StoreId == 1);

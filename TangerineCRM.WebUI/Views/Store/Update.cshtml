@@ -1,0 +1,39 @@
+﻿@model TangerineCRM.WebUI.Models.StoreViewModel
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Styles.Render("~/Content/login")
+@Styles.Render("~/Content/dropdown")
+
+<h2>Edytuj</h2>
+<body>
+    <div class="wrapper fadeInDown" style="align-items: flex-start">
+        <div id="formContent">
+            @using (Html.BeginForm("Update", "Store", FormMethod.Post))
+            {
+                @Html.HiddenFor(x => x.SingleStore.StoreId)
+                @Html.EditorFor(x => x.SingleStore.StoreName, new { @class = "fadeIn second", @name = "Nazwa", @placeholder = "Nazwa" });
+                //@Html.ValidationMessageFor();
+                @Html.EditorFor(x => x.SingleStore.City, new { @class = "fadeIn second", @name = "Miasto", @placeholder = "Miasto" });
+
+                @Html.EditorFor(x => x.SingleStore.Street, new { @class = "fadeIn second", @name = "Ulica", @placeholder = "Ulica" });
+
+                @Html.EditorFor(x => x.SingleStore.Postcode, new { @class = "fadeIn second", @name = "Kod pocztowy", @placeholder = "Kod pocztowy" });
+
+                @Html.EditorFor(x => x.SingleStore.Telephone, new { @class = "fadeIn second", @name = "Telefon", @placeholder = "Telefon" });
+
+                //@Html.ValidationMessageFor();
+                <br />
+                <div class="field fadeIn second">
+                    <label> Właściciel </label>
+                    <br />
+                    @Html.DropDownListFor(x => x.SelectedContractor, Model.ContractorSelectList)
+                </div>
+
+                <input type="submit" class="fadeIn fourth" value="Zmień">
+            }
+            <!-- Remind Passowrd -->
+        </div>
+    </div>
+</body>
