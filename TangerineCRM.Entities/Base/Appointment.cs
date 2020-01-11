@@ -18,6 +18,6 @@ namespace TangerineCRM.Entities.Base
 
         public AppointmentType Type { get; set; }
 
-        public bool Result { get; set; }
+        public Result Result { get; set; }
     }
 }

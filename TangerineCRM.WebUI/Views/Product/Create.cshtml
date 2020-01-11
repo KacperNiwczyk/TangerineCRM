@@ -4,6 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @Styles.Render("~/Content/login")
+@Styles.Render("~/Content/dropdown")
 
 <h2>Create</h2>
 <body>
@@ -16,7 +17,12 @@
                 @Html.TextBoxFor(x => x.SingleProduct.Price, new { @class = "fadeIn second", @name = "Cena", @placeholder = "Cena" });
                 //@Html.ValidationMessageFor();
                 <br />
-                @Html.DropDownListFor(x => x.SelectedStoreID, Model.SelectList);
+                <div class="field fadeIn second">
+                    <label> Sklep </label>
+                    <br />
+                    @Html.DropDownListFor(x => x.SelectedStoreID, Model.SelectList)
+                </div>
+                
                 <input type="submit" class="fadeIn fourth" value="Dodaj">
             }
             <!-- Remind Passowrd -->

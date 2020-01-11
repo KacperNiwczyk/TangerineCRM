@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq.Expressions;
 using TangerineCRM.Business.Interfaces;
 using TangerineCRM.Core.Helpers.Enums;
 using TangerineCRM.DataAccess.Interfaces;
@@ -14,6 +16,10 @@ namespace TangerineCRM.Business.Managers
             _contractorDal = contractorDal;
         }
 
+        public Contractor GetBy(Expression<Func<Contractor, bool>> filter)
+        {
+            return _contractorDal.Get(filter);
+        }
         public List<Contractor> GetAll()
         {
             return _contractorDal.GetList();

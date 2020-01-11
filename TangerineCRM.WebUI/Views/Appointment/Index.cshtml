@@ -22,7 +22,7 @@
             Typ
         </th>
         <th>
-            Rezultat
+           Rezultat
         </th>
         <th>
             <a href="@Url.Action("Create", "Appointment")">Dodaj</a>
@@ -44,7 +44,7 @@
             @item.Type.GetStringValue()
         </td>
         <td>
-            @item.Result.GetResultStringValue()
+            @item.Result.GetStringValue()
         </td>
         <td>
             <a href="@Url.Action("Update", "Appointment", new {id = item.AppointmentId})" class="icon-update" />

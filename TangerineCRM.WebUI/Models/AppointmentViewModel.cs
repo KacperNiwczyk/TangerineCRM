@@ -10,8 +10,22 @@ namespace TangerineCRM.WebUI.Models
 
         public Appointment SingleAppointment { get; set; }
 
-        public IEnumerable<SelectListItem> SelectList { get; set; }
+        public IEnumerable<SelectListItem> SelectListContractor { get; set; }
+
+        public IEnumerable<SelectListItem> SelectListType { get; set; }
+
+        public IEnumerable<SelectListItem> SelectListResult { get; set; }
+
+        public IEnumerable<SelectListItem> SelectListSalesRep { get; set; }
+
+        public string SelectedResult { get; set; }
 
         public string SelectedContractorID { get; set; }
+
+        public string SelectedType { get; set; }
+
+        public string SelectedSalesRep { get; set; }
+
+
     }
 }

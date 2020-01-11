@@ -4,6 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @Styles.Render("~/Content/Login")
+@Styles.Render("~/Content/dropdown")
 <h2>Create</h2>
 <body>
     <div class="wrapper fadeInDown" style="align-items: flex-start">
@@ -11,13 +12,40 @@
             <!-- Login Form -->
             @using (Html.BeginForm("Add", "Appointment", FormMethod.Post))
             {
-                @Html.TextBoxFor(x => x.SingleAppointment.Type, new { @class = "fadeIn second", @name = "Typ", @placeholder = "Nazwa" });
-                
-                @Html.TextBoxFor(x => x.SingleAppointment.Result, new { @class = "fadeIn second", @name = "Cena", @placeholder = "Cena" });
-                
-                @Html.TextBoxFor(x => x.SingleAppointment.Date,  new { @class = "datepicker", @type = "date" });
-                <br />
-                //@Html.DropDownListFor(x => x.SelectedStoreID, Model.SelectList);
+             <div class="field">
+                 <label>Klient</label>
+                 <br />
+                @Html.DropDownListFor(x => x.SelectedContractorID, Model.SelectListContractor)
+             </div>
+              
+             <div class="field">
+                 <label>Przedstawiciel handlowy</label>
+                 <br />
+                 @Html.DropDownListFor(x => x.SelectedSalesRep, Model.SelectListSalesRep)
+                 <br />
+             </div>               
+
+             <div class="field">
+                 <label>Data</label>
+                 <br />
+                 @Html.TextBoxFor(x => x.SingleAppointment.Date, new { @class = "datepicker picker", @type = "date"})
+                 <br />
+             </div>
+
+             <div class="field">
+                 <label>Typ spotkania</label>
+                 <br />
+                 @Html.DropDownListFor(x => x.SelectedType, Model.SelectListType)
+                 <br />
+             </div>
+
+             <div class="field">
+                 <label>Rezultat</label>
+                 <br />
+                 @Html.DropDownListFor(x => x.SelectedResult, Model.SelectListResult)
+                 <br />
+             </div>
+
                 <input type="submit" class="fadeIn fourth" value="Dodaj">
             }
         </div>

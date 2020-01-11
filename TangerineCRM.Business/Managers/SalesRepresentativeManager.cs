@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq.Expressions;
 using TangerineCRM.Business.Interfaces;
 using TangerineCRM.Core.Helpers.Enums;
 using TangerineCRM.DataAccess.Interfaces;
@@ -12,6 +14,11 @@ namespace TangerineCRM.Business.Managers
         public SalesRepresentativeManager(ISalesRepresentativeDal salesRepresentativeDal) : base(salesRepresentativeDal)
         {
             _salesRepresentativeDal = salesRepresentativeDal;
+        }
+
+        public SalesRepresentative GetBy(Expression<Func<SalesRepresentative, bool>> filter)
+        {
+            return _salesRepresentativeDal.Get(filter);
         }
 
         public List<SalesRepresentative> GetAll()

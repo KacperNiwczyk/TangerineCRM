@@ -5,7 +5,7 @@
 }
 
 @Styles.Render("~/Content/login")
-
+@Styles.Render("~/Content/dropdown")
 <h2>Update</h2>
 <body>
     <div class="wrapper fadeInDown">
@@ -19,7 +19,11 @@
                 @Html.EditorFor(x => x.SingleProduct.Price, new { @class = "fadeIn second", @name = "Cena", @placeholder = "Cena" });
                 //@Html.ValidationMessageFor();
                 <br />
-                @Html.DropDownListFor(x => x.SelectedStoreID, Model.SelectList, new { @width = "100px" });
+                <div class="field fadeIn second">
+                    <label> Sklep </label>
+                    <br />
+                    @Html.DropDownListFor(x => x.SelectedStoreID, Model.SelectList)
+                </div>
                 <input type="submit" class="fadeIn fourth" value="Zmień">
             }
             <!-- Remind Passowrd -->
