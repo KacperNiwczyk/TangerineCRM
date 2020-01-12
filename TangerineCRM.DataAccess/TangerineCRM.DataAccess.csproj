@@ -125,13 +125,6 @@
     <Compile Include="Core\AppointmentDal.cs" />
     <Compile Include="Core\Contexts\DatabaseContext.cs" />
     <Compile Include="Core\ContractorDal.cs" />
-    <Compile Include="Core\Mapping\AgreementMapping.cs" />
-    <Compile Include="Core\Mapping\AppointmentMapping.cs" />
-    <Compile Include="Core\Mapping\ContractorMapping.cs" />
-    <Compile Include="Core\Mapping\ProductMapping.cs" />
-    <Compile Include="Core\Mapping\SalesRepresentativeMapping.cs" />
-    <Compile Include="Core\Mapping\StoreMapping.cs" />
-    <Compile Include="Core\Mapping\UserMapping.cs" />
     <Compile Include="Core\ProductDal.cs" />
     <Compile Include="Core\SalesRepresentativeDal.cs" />
     <Compile Include="Core\StoreDal.cs" />

@@ -118,7 +118,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataAccess\ContextHelper.cs" />
     <Compile Include="DataAccess\EntityRepositoryBase.cs" />
     <Compile Include="DataAccess\IEntityRepository.cs" />
     <Compile Include="Entities\IEntity.cs" />

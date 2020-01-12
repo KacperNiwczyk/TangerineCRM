@@ -1,5 +1,4 @@
 ﻿using System.Data.Entity;
-using TangerineCRM.DataAccess.Core.Mapping;
 using TangerineCRM.Entities.Base;
 
 
@@ -18,17 +17,6 @@ namespace TangerineCRM.DataAccess.Core.Contexts
         public DatabaseContext()
         {
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<DatabaseContext>());
-        }
-
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            modelBuilder.Configurations.Add(new ProductMapping());
-            modelBuilder.Configurations.Add(new UserMapping());
-            modelBuilder.Configurations.Add(new StoreMapping());
-            modelBuilder.Configurations.Add(new SalesRepresentativeMapping());
-            modelBuilder.Configurations.Add(new ContractorMapping());
-            modelBuilder.Configurations.Add(new AppointmentMapping());
-            modelBuilder.Configurations.Add(new AgreementMapping());
         }
     }
 }
