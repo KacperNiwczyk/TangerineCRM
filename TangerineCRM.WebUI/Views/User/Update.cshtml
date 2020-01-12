@@ -10,14 +10,15 @@
 <body>
     <div class="wrapper fadeInDown" style="align-items: flex-start">
         <div id="formContent">
-            @using (Html.BeginForm("Add", "User", FormMethod.Post))
+            @using (Html.BeginForm("Update", "User", FormMethod.Post))
             {
                 @Html.HiddenFor(x => x.SingleUser.UserId)
                 @Html.EditorFor(x => x.SingleUser.UserName, new { @class = "fadeIn second", @name = "Login", @placeholder = "Login" });
+                <br />
                 @Html.ValidationMessageFor(x => x.SingleUser.UserName);
                 @Html.EditorFor(x => x.SingleUser.Password, new { @class = "fadeIn second", @name = "Hasło", @placeholder = "Hasło" });
+                <br />
                 @Html.ValidationMessageFor(x => x.SingleUser.Password);
-                //@Html.ValidationMessageFor();
                 <br />
                 <div class="field fadeIn second">
                     <label> Rola </label>

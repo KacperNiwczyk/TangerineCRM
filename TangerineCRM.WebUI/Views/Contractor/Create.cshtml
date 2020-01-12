@@ -13,10 +13,12 @@
             @using (Html.BeginForm("Add", "Contractor", FormMethod.Post))
             {
                 @Html.TextBoxFor(x => x.SingleContractor.FirstName, new { @class = "fadeIn second", @name = "Imię", @placeholder = "Imię" });
+                <br />
                 @Html.ValidationMessageFor(x => x.SingleContractor.FirstName);
                 @Html.TextBoxFor(x => x.SingleContractor.LastName, new { @class = "fadeIn second", @name = "Nazwisko", @placeholder = "Nazwisko" });
+                <br />
                 @Html.ValidationMessageFor(x => x.SingleContractor.LastName);
-                @Html.TextBoxFor(x => x.SingleContractor.Discount,  new { @class = "fadeIn second", @name = "Rabat %", @placeholder = "Rabat %" } )
+                @Html.TextBoxFor(x => x.SingleContractor.Discount, new { @class = "fadeIn second", @name = "Rabat %", @placeholder = "Rabat %" })
                 <br />
                 <div class="field fadeIn second">
                     <label> Zakontraktowany? </label>

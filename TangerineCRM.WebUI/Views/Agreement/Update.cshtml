@@ -17,6 +17,7 @@
                     <label>Klient</label>
                     <br />
                     @Html.DropDownListFor(x => x.SelectedContractor, Model.SelectListContractor)
+                    <br />
                     @Html.ValidationMessageFor(x => x.SelectedContractor)
                 </div>
 
@@ -24,6 +25,7 @@
                     <label>Przedstawiciel handlowy</label>
                     <br />
                     @Html.DropDownListFor(x => x.SelectedSalesRep, Model.SelectListSalesRep)
+                    <br />
                     @Html.ValidationMessageFor(x => x.SelectedSalesRep)
                     <br />
                 </div>
@@ -39,11 +41,13 @@
                     <label>Data</label>
                     <br />
                     @Html.TextBoxFor(x => x.SingleAgreement.Date, new { @class = "datepicker picker", @type = "date", @Value = Model.SingleAgreement.Date.ToString("yyyy-MM-dd") })
+                    <br />
                     @Html.ValidationMessageFor(x => x.SingleAgreement.Date)
                     <br />
                 </div>
 
                 @Html.TextBoxFor(x => x.SingleAgreement.Value, new { @class = "fadeIn second", @name = "Wartość umowy", @placeholder = "Wartość umowy" });
+
                 @Html.ValidationMessageFor(x => x.SingleAgreement.Value)
                 <input type="submit" class="fadeIn fourth" value="Zmień">
             }

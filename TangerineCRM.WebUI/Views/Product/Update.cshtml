@@ -15,14 +15,17 @@
             {
                 @Html.HiddenFor(x => x.SingleProduct.ProductId)
                 @Html.EditorFor(x => x.SingleProduct.ProductName, new { @class = "fadeIn second", @name = "Nazwa", @placeholder = "Nazwa" });
+                <br />
                 @Html.ValidationMessageFor(x => x.SingleProduct.ProductName);
                 @Html.EditorFor(x => x.SingleProduct.Price, new { @class = "fadeIn second", @name = "Cena", @placeholder = "Cena" });
+                <br />
                 @Html.ValidationMessageFor(x => x.SingleProduct.Price);
                 <br />
                 <div class="field fadeIn second">
                     <label> Sklep </label>
                     <br />
                     @Html.DropDownListFor(x => x.SelectedStoreID, Model.SelectList)
+                    <br />
                     @Html.ValidationMessageFor(x => x.SelectedStoreID)
                 </div>
                 <input type="submit" class="fadeIn fourth" value="Zmień">

@@ -13,8 +13,10 @@
             @using (Html.BeginForm("Add", "SalesRepresentative", FormMethod.Post))
             {
                 @Html.TextBoxFor(x => x.SingleRepresentative.FirstName, new { @class = "fadeIn second", @name = "Imię", @placeholder = "Imię" });
+                <br />
                 @Html.ValidationMessageFor(x => x.SingleRepresentative.FirstName);
                 @Html.TextBoxFor(x => x.SingleRepresentative.LastName, new { @class = "fadeIn second", @name = "Nazwisko", @placeholder = "Nazwisko" });
+                <br />
                 @Html.ValidationMessageFor(x => x.SingleRepresentative.LastName);
                 <input type="submit" class="fadeIn fourth" value="Dodaj">
             }

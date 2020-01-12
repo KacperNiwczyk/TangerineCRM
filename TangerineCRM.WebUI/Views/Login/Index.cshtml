@@ -22,8 +22,10 @@
             @using (Html.BeginForm("Authorization", "Login", FormMethod.Post))
             {
                 @Html.TextBoxFor(x => x.SingleUser.UserName, new { @class = "fadeIn second", @name = "login", @placeholder = "login" });
+                <br />
                 @Html.ValidationMessageFor(x => x.SingleUser.UserName);
                 @Html.PasswordFor(x => x.SingleUser.Password, new { @class = "fadeIn third", @name = "password", @placeholder = "password" });
+                <br />
                 @Html.ValidationMessageFor(x => x.SingleUser.Password);
                 <label class="field-validation-error">@Html.DisplayFor(x => x.ErrorMessage)</label>
                 <br />
