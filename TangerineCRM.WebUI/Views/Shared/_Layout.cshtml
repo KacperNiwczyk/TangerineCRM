@@ -22,7 +22,7 @@
                 @Html.ActionLink("Przedstawiciele", "Index", "SalesRepresentative", routeValues: null, htmlAttributes: new { @class = "list-group-item list-group-item-action bg-light" })
                 @if (Session["userType"] != null)
                 {
-                    if (Session["userType"].Equals("ADMIN"))
+                    if (Session["userType"].ToString().Equals("ADMIN"))
                     {
                         @Html.ActionLink("Użytkownicy", "Index", "User", routeValues: null, htmlAttributes: new { @class = "list-group-item list-group-item-action bg-light" })
                     }
@@ -32,7 +32,7 @@
         <!-- /#sidebar-wrapper -->
         <!-- Page Content -->
         <div id="page-content-wrapper">
-            Zalogowany jako: @Session["userName"].ToString()
+            Zalogowany jako: @Session["userName"]
             <hr />
             <div class="container-fluid">
                 <p>@RenderBody()</p>

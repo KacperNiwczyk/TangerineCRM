@@ -32,6 +32,7 @@ namespace TangerineCRM.WebUI.Controllers
             return View(model);
         }
 
+        [Authorize]
         public ActionResult Create()
         {
             var model = new StoreViewModel()

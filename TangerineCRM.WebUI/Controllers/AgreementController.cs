@@ -31,7 +31,6 @@ namespace TangerineCRM.WebUI.Controllers
         // GET: Agreement
         public ActionResult Index()
         {
-            agreementManager.Add(new Agreement() { Contractor = new Contractor() { FirstName = "Zbyszek", LastName = "Włodarczyk" }, SalesRepresentative = new SalesRepresentative() { FirstName = "Mariusz", LastName = "Pudzianowski" }, Date = DateTime.Now, Type = AgreementType.BUY, Value = 300.50m });
 
             var model = new AgreementViewModel()
             {

@@ -25,8 +25,6 @@ namespace TangerineCRM.WebUI.Controllers
         // GET: Product
         public ActionResult Index()
         {
-            productManager.Add(new Product() { ProductName = "Mandarynki", Store = new Store() { StoreName = "Biedronka", City = "Zielona Góra", Postcode = "96-523", Street = "Wyszyńskiego ", Contractor = new Contractor() } });//TODO: Delete
-
             var productModel = new ProductViewModel()
             {
                 ProductList = productManager.GetAll()

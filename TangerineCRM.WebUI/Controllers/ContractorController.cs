@@ -23,7 +23,6 @@ namespace TangerineCRM.WebUI.Controllers
         // GET: Contractor
         public ActionResult Index()
         {
-            contractorManager.Add(new Contractor() { FirstName = "Janusz", LastName = "Śliwiński", Discount = 7, IsContracted = true });
 
             var model = new ContractorViewModel()
             {

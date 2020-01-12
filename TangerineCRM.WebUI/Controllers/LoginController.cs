@@ -48,10 +48,10 @@ namespace TangerineCRM.WebUI.Controllers
                 return View("Index", user);
             }
 
-            FormsAuthentication.SetAuthCookie(user.SingleUser.UserName, false);
-            Session["userId"] = user.SingleUser.UserId;
-            Session["userType"] = user.SingleUser.UserType.ToString();
-            Session["userName"] = user.SingleUser.UserName;
+            FormsAuthentication.SetAuthCookie(userDetails.UserName, true);
+            Session["userId"] = userDetails.UserId;
+            Session["userType"] = userDetails.UserType.ToString();
+            Session["userName"] = userDetails.UserName;
             return RedirectToAction("Index", "Home");
         }
     }

@@ -31,14 +31,6 @@ namespace TangerineCRM.WebUI.Controllers
         // GET: Appointment
         public ActionResult Index()
         {
-            appointmentManager.Add(new Appointment()
-            {
-                Contractor = new Contractor() { FirstName = "Jan", LastName = "Kowalski" },
-                SalesRepresentative = new SalesRepresentative() { FirstName = "Bogdan", LastName = "Smoleń" },
-                Date = DateTime.Now,
-                Type = AppointmentType.INFO,
-                Result = Result.INDEFINITE
-            });
 
             var model = new AppointmentViewModel()
             {
