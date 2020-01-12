@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using TangerineCRM.Core.Entities;
+using TangerineCRM.Core.Helpers.Enums;
 
 namespace TangerineCRM.Entities.Base
 {
@@ -14,6 +15,6 @@ namespace TangerineCRM.Entities.Base
         [Required(ErrorMessage = "This field is required")]
         public string Password { get; set; }
 
-        public string UserType { get; set; }
+        public UserType UserType { get; set; }
     }
 }

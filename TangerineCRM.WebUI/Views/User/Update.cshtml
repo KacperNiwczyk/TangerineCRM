@@ -1,0 +1,32 @@
+﻿@model TangerineCRM.WebUI.Models.UserViewModel
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Styles.Render("~/Content/login")
+@Styles.Render("~/Content/dropdown")
+
+<h2>Edytuj</h2>
+<body>
+    <div class="wrapper fadeInDown" style="align-items: flex-start">
+        <div id="formContent">
+            @using (Html.BeginForm("Add", "User", FormMethod.Post))
+            {
+                @Html.HiddenFor(x => x.SingleUser.UserId)
+                @Html.EditorFor(x => x.SingleUser.UserName, new { @class = "fadeIn second", @name = "Login", @placeholder = "Login" });
+                //@Html.ValidationMessageFor();
+                @Html.EditorFor(x => x.SingleUser.Password, new { @class = "fadeIn second", @name = "Hasło", @placeholder = "Hasło" });
+
+                //@Html.ValidationMessageFor();
+                <br />
+                <div class="field fadeIn second">
+                    <label> Rola </label>
+                    <br />
+                    @Html.DropDownListFor(x => x.SelectedUserType, Model.UserTypeList)
+                </div>
+
+                <input type="submit" class="fadeIn fourth" value="Dodaj">
+            }
+        </div>
+    </div>
+</body>

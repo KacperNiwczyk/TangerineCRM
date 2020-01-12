@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using TangerineCRM.Core.Helpers.Enums
+<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -16,15 +17,19 @@
                 @Html.ActionLink("Spotkania", "Index", "Appointment", routeValues: null, htmlAttributes: new { @class = "list-group-item list-group-item-action bg-light" })
                 @Html.ActionLink("Umowy", "Index", "Agreement", routeValues: null, htmlAttributes: new { @class = "list-group-item list-group-item-action bg-light" })
                 @Html.ActionLink("Produkty", "Index", "Product", routeValues: null, htmlAttributes: new { @class = "list-group-item list-group-item-action bg-light" })
-                @Html.ActionLink("Klienci", "Index", "Contractor", routeValues: null, htmlAttributes: new {@class ="list-group-item list-group-item-action bg-light" })
+                @Html.ActionLink("Klienci", "Index", "Contractor", routeValues: null, htmlAttributes: new { @class = "list-group-item list-group-item-action bg-light" })
                 @Html.ActionLink("Sklepy", "Index", "Store", routeValues: null, htmlAttributes: new { @class = "list-group-item list-group-item-action bg-light" })
                 @Html.ActionLink("Przedstawiciele", "Index", "SalesRepresentative", routeValues: null, htmlAttributes: new { @class = "list-group-item list-group-item-action bg-light" })
-                @Html.ActionLink("Użytkownicy", "Index", "Users", routeValues: null, htmlAttributes: new { @class = "list-group-item list-group-item-action bg-light" })
+                @if (!string.IsNullOrWhiteSpace(Session["userType"].ToString()) && Session["userType"].Equals("ADMIN"))
+                {
+                    @Html.ActionLink("Użytkownicy", "Index", "User", routeValues: null, htmlAttributes: new { @class = "list-group-item list-group-item-action bg-light" })
+                }
             </div>
         </div>
         <!-- /#sidebar-wrapper -->
         <!-- Page Content -->
         <div id="page-content-wrapper">
+            Zalogowany jako: @Session["userName"].ToString()
             <hr />
             <div class="container-fluid">
                 <p>@RenderBody()</p>

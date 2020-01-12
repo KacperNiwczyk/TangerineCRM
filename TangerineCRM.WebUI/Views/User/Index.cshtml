@@ -1,0 +1,45 @@
+﻿@model TangerineCRM.WebUI.Models.UserViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Styles.Render("~/Content/table")
+@using TangerineCRM.Core.Helpers
+<h2>Index</h2>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Login</th>
+                <th>Hasło</th>
+                <th>Typ konta</th>
+                <th>
+                    <a href="@Url.Action("Create", "User")" class="icon-add" />
+                </th>
+            </tr>
+        </thead>
+        @foreach (var item in Model.UserList)
+        {
+            <tr>
+                <td>
+                    @item.UserId
+                </td>
+                <td>
+                    @item.UserName
+                </td>
+                <td>
+                    @item.Password
+                </td>
+                <td>
+                    @item.UserType.GetStringValue()
+                </td>
+                <td>
+                    <a href="@Url.Action("Update", "User", new {id = item.UserId})" class="icon-update" />
+                    <a href="@Url.Action("Delete", "User", new {id = item.UserId})" class="icon-delete" />
+                </td>
+            </tr>
+        }
+    </table>
+
+</body>

@@ -1,28 +1,44 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
 using TangerineCRM.Business.Managers;
+using TangerineCRM.Core.Helpers.Enums;
 using TangerineCRM.DataAccess.Core;
 using TangerineCRM.DataAccess.Core.Contexts;
+using TangerineCRM.Entities.Base;
 using TangerineCRM.WebUI.Models;
 
 namespace TangerineCRM.WebUI.Controllers
 {
+
     public class LoginController : Controller
     {
-        // GET: Login
-        DatabaseContext context = new DatabaseContext();
 
+        UserManager userManager;
+        DatabaseContext context;
+
+        public LoginController()
+        {
+            context = new DatabaseContext();
+            userManager = new UserManager(new UserDal(context));
+        }
+
+        
         public ActionResult Index()
         {
+            var admin = userManager.GetBy(x => x.UserName.Equals("Admin") && x.Password.Equals("Admin"));
+
+            if (admin == null)
+            {
+                userManager.Add(new User() { UserName = "Admin", Password = "Admin", UserType = UserType.ADMIN });
+            }
+
             return View();
         }
 
         [HttpPost]
         public ActionResult Authorization(UserViewModel user)
         {
-            var userManager = new UserManager(new UserDal(context));
-
-            var userDetails = userManager.GetAll().Where(x => x.UserName.Equals(user.UserModel.UserName) && x.Password.Equals(user.UserModel.Password)).FirstOrDefault();
+            var userDetails = userManager.GetAll().Where(x => x.UserName.Equals(user.SingleUser.UserName) && x.Password.Equals(user.SingleUser.Password)).FirstOrDefault();
 
             if (userDetails == null)
             {
@@ -30,7 +46,9 @@ namespace TangerineCRM.WebUI.Controllers
                 return View("Index", user);
             }
 
-            Session["userId"] = user.UserModel.UserId;
+            Session["userId"] = user.SingleUser.UserId;
+            Session["userType"] = user.SingleUser.UserType.ToString();
+            Session["userName"] = user.SingleUser.UserName;
             return RedirectToAction("Index", "Home");
         }
     }

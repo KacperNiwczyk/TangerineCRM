@@ -13,9 +13,10 @@ namespace TangerineCRM.WebUI.Controllers
     {
         ProductManager productManager;
         StoreManager storeManager;
-        DatabaseContext context = new DatabaseContext();
+        DatabaseContext context;
         public ProductController()
         {
+            context = new DatabaseContext();
             productManager = new ProductManager(new ProductDal(context));
             storeManager = new StoreManager(new StoreDal(context));
         }
