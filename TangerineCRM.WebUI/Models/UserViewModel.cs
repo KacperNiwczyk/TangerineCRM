@@ -6,6 +6,7 @@ namespace TangerineCRM.WebUI.Models
 {
     public class UserViewModel
     {
+
         public User SingleUser { get; set; }
 
         public List<User> UserList { get; set; }

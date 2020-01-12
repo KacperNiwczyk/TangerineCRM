@@ -13,21 +13,22 @@
             @using (Html.BeginForm("Add", "Store", FormMethod.Post))
             {
                 @Html.TextBoxFor(x => x.SingleStore.StoreName, new { @class = "fadeIn second", @name = "Nazwa", @placeholder = "Nazwa" });
-                //@Html.ValidationMessageFor();
+                @Html.ValidationMessageFor(x => x.SingleStore.StoreName);
                 @Html.TextBoxFor(x => x.SingleStore.City, new { @class = "fadeIn second", @name = "Miasto", @placeholder = "Miasto" });
-
+                @Html.ValidationMessageFor(x => x.SingleStore.City);
                 @Html.TextBoxFor(x => x.SingleStore.Street, new { @class = "fadeIn second", @name = "Ulica", @placeholder = "Ulica" });
-
+                @Html.ValidationMessageFor(x => x.SingleStore.Street);
                 @Html.TextBoxFor(x => x.SingleStore.Postcode, new { @class = "fadeIn second", @name = "Kod pocztowy", @placeholder = "Kod pocztowy" });
-
+                @Html.ValidationMessageFor(x => x.SingleStore.Postcode);
                 @Html.TextBoxFor(x => x.SingleStore.Telephone, new { @class = "fadeIn second", @name = "Telefon", @placeholder = "Telefon" });
-
+                @Html.ValidationMessageFor(x => x.SingleStore.Telephone);
                 //@Html.ValidationMessageFor();
                 <br />
                 <div class="field fadeIn second">
                     <label> Właściciel </label>
                     <br />
                     @Html.DropDownListFor(x => x.SelectedContractor, Model.ContractorSelectList)
+                    @Html.ValidationMessageFor(x => x.SelectedContractor)
                 </div>
 
                 <input type="submit" class="fadeIn fourth" value="Dodaj">

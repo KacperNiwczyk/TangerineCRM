@@ -14,9 +14,9 @@
             {
                 @Html.HiddenFor(x => x.SingleContractor.ContractorId)
                 @Html.EditorFor(x => x.SingleContractor.FirstName, new { @class = "fadeIn second", @name = "Imię", @placeholder = "Imię" });
-                //@Html.ValidationMessageFor();
+                @Html.ValidationMessageFor(x => x.SingleContractor.FirstName);
                 @Html.EditorFor(x => x.SingleContractor.LastName, new { @class = "fadeIn second", @name = "Nazwisko", @placeholder = "Nazwisko" });
-                //@Html.ValidationMessageFor();
+                @Html.ValidationMessageFor(x => x.SingleContractor.LastName);
                 @Html.EditorFor(x => x.SingleContractor.Discount, new { @class = "fadeIn second", @name = "Rabat %", @placeholder = "Rabat %" })
                 <br />
                 <div class="field fadeIn second">

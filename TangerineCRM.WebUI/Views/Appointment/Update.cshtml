@@ -17,12 +17,14 @@
                     <label>Klient</label>
                     <br />
                     @Html.DropDownListFor(x => x.SelectedContractorID, Model.SelectListContractor)
+                    @Html.ValidationMessageFor(x => x.SelectedContractorID)
                 </div>
 
                 <div class="field">
                     <label>Przedstawiciel handlowy</label>
                     <br />
                     @Html.DropDownListFor(x => x.SelectedSalesRep, Model.SelectListSalesRep)
+                    @Html.ValidationMessageFor(x => x.SelectedSalesRep)
                     <br />
                 </div>
 
@@ -43,7 +45,8 @@
                 <div class="field">
                     <label>Data spotkania</label>
                     <br />
-                    @Html.TextBoxFor(x => x.SingleAppointment.Date, new { @class = "datepicker picker", @type = "date", @Value = Model.SingleAppointment.Date.ToString("yyyy-MM-dd")})
+                    @Html.TextBoxFor(x => x.SingleAppointment.Date, new { @class = "datepicker picker", @type = "date", @Value = Model.SingleAppointment.Date.ToString("yyyy-MM-dd") })
+                    @Html.ValidationMessageFor(x => x.SingleAppointment.Date)
                     <br />
                 </div>
                 <input type="submit" class="fadeIn fourth" value="Zmień">

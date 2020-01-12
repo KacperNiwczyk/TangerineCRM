@@ -14,9 +14,9 @@
             {
                 @Html.HiddenFor(x => x.SingleUser.UserId)
                 @Html.EditorFor(x => x.SingleUser.UserName, new { @class = "fadeIn second", @name = "Login", @placeholder = "Login" });
-                //@Html.ValidationMessageFor();
+                @Html.ValidationMessageFor(x => x.SingleUser.UserName);
                 @Html.EditorFor(x => x.SingleUser.Password, new { @class = "fadeIn second", @name = "Hasło", @placeholder = "Hasło" });
-
+                @Html.ValidationMessageFor(x => x.SingleUser.Password);
                 //@Html.ValidationMessageFor();
                 <br />
                 <div class="field fadeIn second">

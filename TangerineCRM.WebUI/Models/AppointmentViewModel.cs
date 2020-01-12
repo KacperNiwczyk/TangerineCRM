@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 using TangerineCRM.Entities.Base;
 
@@ -20,10 +21,12 @@ namespace TangerineCRM.WebUI.Models
 
         public string SelectedResult { get; set; }
 
+        [Required(ErrorMessage = "To pole jest wymagane")]
         public string SelectedContractorID { get; set; }
 
         public string SelectedType { get; set; }
 
+        [Required(ErrorMessage = "To pole jest wymagane")]
         public string SelectedSalesRep { get; set; }
 
 

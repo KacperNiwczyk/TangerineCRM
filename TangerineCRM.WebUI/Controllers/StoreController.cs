@@ -94,6 +94,7 @@ namespace TangerineCRM.WebUI.Controllers
         private Store ParseValuesFromModel(StoreViewModel model)
         {
             var store = model.SingleStore;
+
             store.Contractor = GetContactor(model.SelectedContractor, out int contractorId);
             store.ContractorID = contractorId;
 

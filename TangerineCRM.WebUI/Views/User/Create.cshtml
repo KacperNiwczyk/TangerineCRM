@@ -13,10 +13,9 @@
             @using (Html.BeginForm("Add", "User", FormMethod.Post))
             {
                 @Html.TextBoxFor(x => x.SingleUser.UserName, new { @class = "fadeIn second", @name = "Login", @placeholder = "Login" });
-                //@Html.ValidationMessageFor();
+                @Html.ValidationMessageFor(x => x.SingleUser.UserName);
                 @Html.TextBoxFor(x => x.SingleUser.Password, new { @class = "fadeIn second", @name = "Hasło", @placeholder = "Hasło" });
-
-                //@Html.ValidationMessageFor();
+                @Html.ValidationMessageFor(x => x.SingleUser.Password);
                 <br />
                 <div class="field fadeIn second">
                     <label> Rola </label>
