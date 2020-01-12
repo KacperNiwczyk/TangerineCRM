@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
+using System.Web.Security;
 using TangerineCRM.Business.Managers;
 using TangerineCRM.Core.Helpers.Enums;
 using TangerineCRM.DataAccess.Core;
@@ -9,7 +10,7 @@ using TangerineCRM.WebUI.Models;
 
 namespace TangerineCRM.WebUI.Controllers
 {
-
+    [Authorize]
     public class LoginController : Controller
     {
 
@@ -22,7 +23,7 @@ namespace TangerineCRM.WebUI.Controllers
             userManager = new UserManager(new UserDal(context));
         }
 
-        
+        [AllowAnonymous]
         public ActionResult Index()
         {
             var admin = userManager.GetBy(x => x.UserName.Equals("Admin") && x.Password.Equals("Admin"));
@@ -36,6 +37,7 @@ namespace TangerineCRM.WebUI.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public ActionResult Authorization(UserViewModel user)
         {
             var userDetails = userManager.GetAll().Where(x => x.UserName.Equals(user.SingleUser.UserName) && x.Password.Equals(user.SingleUser.Password)).FirstOrDefault();
@@ -46,6 +48,7 @@ namespace TangerineCRM.WebUI.Controllers
                 return View("Index", user);
             }
 
+            FormsAuthentication.SetAuthCookie(user.SingleUser.UserName, false);
             Session["userId"] = user.SingleUser.UserId;
             Session["userType"] = user.SingleUser.UserType.ToString();
             Session["userName"] = user.SingleUser.UserName;

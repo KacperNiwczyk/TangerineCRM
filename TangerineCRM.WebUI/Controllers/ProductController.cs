@@ -9,6 +9,7 @@ using TangerineCRM.WebUI.Models;
 
 namespace TangerineCRM.WebUI.Controllers
 {
+    [Authorize]
     public class ProductController : Controller
     {
         ProductManager productManager;

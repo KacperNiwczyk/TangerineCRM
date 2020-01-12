@@ -8,6 +8,7 @@ using TangerineCRM.WebUI.Models;
 
 namespace TangerineCRM.WebUI.Controllers
 {
+    [Authorize]
     public class StoreController : Controller
     {
         StoreManager storeManager;

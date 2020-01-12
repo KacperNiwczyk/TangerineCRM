@@ -20,9 +20,12 @@
                 @Html.ActionLink("Klienci", "Index", "Contractor", routeValues: null, htmlAttributes: new { @class = "list-group-item list-group-item-action bg-light" })
                 @Html.ActionLink("Sklepy", "Index", "Store", routeValues: null, htmlAttributes: new { @class = "list-group-item list-group-item-action bg-light" })
                 @Html.ActionLink("Przedstawiciele", "Index", "SalesRepresentative", routeValues: null, htmlAttributes: new { @class = "list-group-item list-group-item-action bg-light" })
-                @if (!string.IsNullOrWhiteSpace(Session["userType"].ToString()) && Session["userType"].Equals("ADMIN"))
+                @if (Session["userType"] != null)
                 {
-                    @Html.ActionLink("Użytkownicy", "Index", "User", routeValues: null, htmlAttributes: new { @class = "list-group-item list-group-item-action bg-light" })
+                    if (Session["userType"].Equals("ADMIN"))
+                    {
+                        @Html.ActionLink("Użytkownicy", "Index", "User", routeValues: null, htmlAttributes: new { @class = "list-group-item list-group-item-action bg-light" })
+                    }
                 }
             </div>
         </div>
