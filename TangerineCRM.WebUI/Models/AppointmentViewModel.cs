@@ -15,6 +15,8 @@ namespace TangerineCRM.WebUI.Models
 
         public IEnumerable<SelectListItem> SelectListType { get; set; }
 
+        public IEnumerable<SelectListItem> SelectEventList { get; set; }
+
         public IEnumerable<SelectListItem> SelectListResult { get; set; }
 
         public IEnumerable<SelectListItem> SelectListSalesRep { get; set; }
@@ -29,6 +31,7 @@ namespace TangerineCRM.WebUI.Models
         [Required(ErrorMessage = "To pole jest wymagane")]
         public string SelectedSalesRep { get; set; }
 
+        public string SelectedEvent { get; set; }
 
     }
 }

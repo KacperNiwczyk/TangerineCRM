@@ -8,7 +8,7 @@ using TangerineCRM.WebUI.Models;
 
 namespace TangerineCRM.WebUI.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class StoreController : Controller
     {
         StoreManager storeManager;
@@ -32,7 +32,7 @@ namespace TangerineCRM.WebUI.Controllers
             return View(model);
         }
 
-        [Authorize]
+        //[Authorize]
         public ActionResult Create()
         {
             var model = new StoreViewModel()

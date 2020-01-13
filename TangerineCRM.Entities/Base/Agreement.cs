@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using TangerineCRM.Core.Entities;
 using TangerineCRM.Core.Helpers.Enums;
@@ -23,6 +24,9 @@ namespace TangerineCRM.Entities.Base
 
         public AgreementType Type { get; set; }
 
+        public string City { get; set; }
+
+        public List<Product> Products { get; set; }
     }
 
 }

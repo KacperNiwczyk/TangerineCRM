@@ -16,3 +16,22 @@ C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Business\obj\Debug\Tanger
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Business\obj\Debug\TangerineCRM.Business.csproj.CopyComplete
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Business\obj\Debug\TangerineCRM.Business.dll
 C:\Users\Kacper\source\repos\TangerineCRM\TangerineCRM.Business\obj\Debug\TangerineCRM.Business.pdb
+D:\Kacper Niwczyk, Magdalena Miłowska\TangerineCRM\TangerineCRM.Business\bin\Debug\TangerineCRM.Business.dll.config
+D:\Kacper Niwczyk, Magdalena Miłowska\TangerineCRM\TangerineCRM.Business\bin\Debug\TangerineCRM.Business.dll
+D:\Kacper Niwczyk, Magdalena Miłowska\TangerineCRM\TangerineCRM.Business\bin\Debug\TangerineCRM.Business.pdb
+D:\Kacper Niwczyk, Magdalena Miłowska\TangerineCRM\TangerineCRM.Business\bin\Debug\TangerineCRM.Core.dll
+D:\Kacper Niwczyk, Magdalena Miłowska\TangerineCRM\TangerineCRM.Business\bin\Debug\TangerineCRM.DataAccess.dll
+D:\Kacper Niwczyk, Magdalena Miłowska\TangerineCRM\TangerineCRM.Business\bin\Debug\TangerineCRM.Entities.dll
+D:\Kacper Niwczyk, Magdalena Miłowska\TangerineCRM\TangerineCRM.Business\bin\Debug\EntityFramework.dll
+D:\Kacper Niwczyk, Magdalena Miłowska\TangerineCRM\TangerineCRM.Business\bin\Debug\TangerineCRM.Core.pdb
+D:\Kacper Niwczyk, Magdalena Miłowska\TangerineCRM\TangerineCRM.Business\bin\Debug\TangerineCRM.Core.dll.config
+D:\Kacper Niwczyk, Magdalena Miłowska\TangerineCRM\TangerineCRM.Business\bin\Debug\TangerineCRM.DataAccess.pdb
+D:\Kacper Niwczyk, Magdalena Miłowska\TangerineCRM\TangerineCRM.Business\bin\Debug\TangerineCRM.DataAccess.dll.config
+D:\Kacper Niwczyk, Magdalena Miłowska\TangerineCRM\TangerineCRM.Business\bin\Debug\TangerineCRM.Entities.pdb
+D:\Kacper Niwczyk, Magdalena Miłowska\TangerineCRM\TangerineCRM.Business\bin\Debug\TangerineCRM.Entities.dll.config
+D:\Kacper Niwczyk, Magdalena Miłowska\TangerineCRM\TangerineCRM.Business\bin\Debug\EntityFramework.xml
+D:\Kacper Niwczyk, Magdalena Miłowska\TangerineCRM\TangerineCRM.Business\obj\Debug\TangerineCRM.Business.csprojAssemblyReference.cache
+D:\Kacper Niwczyk, Magdalena Miłowska\TangerineCRM\TangerineCRM.Business\obj\Debug\TangerineCRM.Business.csproj.CoreCompileInputs.cache
+D:\Kacper Niwczyk, Magdalena Miłowska\TangerineCRM\TangerineCRM.Business\obj\Debug\TangerineCRM.Business.csproj.CopyComplete
+D:\Kacper Niwczyk, Magdalena Miłowska\TangerineCRM\TangerineCRM.Business\obj\Debug\TangerineCRM.Business.dll
+D:\Kacper Niwczyk, Magdalena Miłowska\TangerineCRM\TangerineCRM.Business\obj\Debug\TangerineCRM.Business.pdb

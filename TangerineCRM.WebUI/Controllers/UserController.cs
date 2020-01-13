@@ -12,7 +12,7 @@ using TangerineCRM.WebUI.Models;
 
 namespace TangerineCRM.WebUI.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class UserController : Controller
     {
         DatabaseContext context;

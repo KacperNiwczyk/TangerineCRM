@@ -10,12 +10,12 @@
 <table class="table">
     <tr>
         <th>
-          Nr <br/>
+            Nr <br />
             klienta
         </th>
         <th>
-          Nr <br/>
-            przedstawiciela 
+            Nr <br />
+            przedstawiciela
         </th>
         <th>
             Data
@@ -24,7 +24,13 @@
             Typ
         </th>
         <th>
-           Rezultat
+            Wydarzenie
+        </th>
+        <th>
+            Rezultat
+        </th>
+        <th>
+            Notka
         </th>
         <th>
             <a href="@Url.Action("Create", "Appointment")" class="icon-add" />
@@ -46,7 +52,13 @@
             @item.Type.GetStringValue()
         </td>
         <td>
+            @item.Event.GetStringValue()
+        </td>
+        <td>
             @item.Result.GetStringValue()
+        </td>
+        <td>
+            @item.Note
         </td>
         <td>
             <a href="@Url.Action("Update", "Appointment", new {id = item.AppointmentId})" class="icon-update" />

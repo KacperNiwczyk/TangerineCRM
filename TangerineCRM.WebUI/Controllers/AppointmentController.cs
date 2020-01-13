@@ -12,7 +12,7 @@ using TangerineCRM.WebUI.Models;
 
 namespace TangerineCRM.WebUI.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class AppointmentController : Controller
     {
         AppointmentManager appointmentManager;
@@ -47,10 +47,26 @@ namespace TangerineCRM.WebUI.Controllers
                 SelectListContractor = GetContractorDropDown(),
                 SelectListSalesRep = GetSalesRepresentativeDropDown(),
                 SelectListType = GetTypeDropDown(),
-                SelectListResult = GetResultDropDown()
+                SelectListResult = GetResultDropDown(),
+                SelectEventList = GetEventDropDown()
             };
 
             return View(model);
+        }
+
+        private List<SelectListItem> GetEventDropDown()
+        {
+            var list = new List<SelectListItem>();
+
+            Enum.GetValues(typeof(EventType)).Cast<EventType>()
+                .ToList()
+                .ForEach(x => list.Add(new SelectListItem()
+                {
+                    Text = x.GetStringValue(),
+                    Value = x.ToString()
+                }));
+
+            return list;
         }
 
         [HttpPost]
@@ -160,7 +176,9 @@ namespace TangerineCRM.WebUI.Controllers
                 SalesRepresentativeID = representativeId,
                 Date = model.SingleAppointment.Date,
                 Type = GetType(model.SelectedType),
-                Result = GetResult(model.SelectedResult)
+                Result = GetResult(model.SelectedResult),
+                Event = GetEventType(model.SelectedEvent),
+                Note = model.SingleAppointment.Note
             };
 
             return appointment;
@@ -174,6 +192,11 @@ namespace TangerineCRM.WebUI.Controllers
         private AppointmentType GetType(string selectedType)
         {
             return (AppointmentType)Enum.Parse(typeof(AppointmentType), selectedType);
+        }
+
+        private EventType GetEventType(string selectedEvent)
+        {
+            return (EventType)Enum.Parse(typeof(EventType), selectedEvent);
         }
 
         private SalesRepresentative GetRepsresentative(string id, out int representativeId)

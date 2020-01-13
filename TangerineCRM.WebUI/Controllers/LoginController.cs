@@ -10,7 +10,6 @@ using TangerineCRM.WebUI.Models;
 
 namespace TangerineCRM.WebUI.Controllers
 {
-    [Authorize]
     public class LoginController : Controller
     {
 
@@ -48,10 +47,11 @@ namespace TangerineCRM.WebUI.Controllers
                 return View("Index", user);
             }
 
-            FormsAuthentication.SetAuthCookie(userDetails.UserName, true);
+            FormsAuthentication.SetAuthCookie(userDetails.UserName, false);
             Session["userId"] = userDetails.UserId;
             Session["userType"] = userDetails.UserType.ToString();
             Session["userName"] = userDetails.UserName;
+
             return RedirectToAction("Index", "Home");
         }
     }

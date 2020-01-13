@@ -18,8 +18,14 @@ namespace TangerineCRM.Entities.Base
         [Required(ErrorMessage = "To pole jest wymagane")]
         public DateTime Date { get; set; }
 
+        public EventType Event { get; set; }
+
         public AppointmentType Type { get; set; }
 
         public Result Result { get; set; }
+
+        public string Note { get; set; }
+
+        public string City { get; set; }
     }
 }

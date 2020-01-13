@@ -45,6 +45,13 @@
                 </div>
 
                 <div class="field">
+                    <label>Wydarzenie</label>
+                    <br />
+                    @Html.DropDownListFor(x => x.SelectedEvent, Model.SelectEventList)
+                    <br />
+                </div>
+
+                <div class="field">
                     <label>Data spotkania</label>
                     <br />
                     @Html.TextBoxFor(x => x.SingleAppointment.Date, new { @class = "datepicker picker", @type = "date", @Value = Model.SingleAppointment.Date.ToString("yyyy-MM-dd") })
@@ -52,6 +59,11 @@
                     @Html.ValidationMessageFor(x => x.SingleAppointment.Date)
                     <br />
                 </div>
+
+                <label>Notatka</label>
+                <br />
+                @Html.EditorFor(x => x.SingleAppointment.Note, new { @style = "size:20" })
+
                 <input type="submit" class="fadeIn fourth" value="Zmień">
             }
         </div>

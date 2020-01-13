@@ -18,11 +18,11 @@ namespace TangerineCRM.Business.Managers
 
         public Agreement GetBy(Expression<Func<Agreement, bool>> filter)
         {
-            return _agreementDal.Get(filter, x => x.Contractor, x => x.SalesRepresentative);
+            return _agreementDal.Get(filter, x => x.Contractor, x => x.SalesRepresentative, x => x.Products);
         }
         public List<Agreement> GetAll()
         {
-            return _agreementDal.GetList(null, x => x.SalesRepresentative, x => x.Contractor);
+            return _agreementDal.GetList(null, x => x.SalesRepresentative, x => x.Contractor, x => x.Products);
         }
 
         protected override ValidationResult Validate(Agreement t)

@@ -123,6 +123,7 @@
     <Compile Include="Entities\IEntity.cs" />
     <Compile Include="Helpers\Enums\AgreementType.cs" />
     <Compile Include="Helpers\Enums\AppointmentType.cs" />
+    <Compile Include="Helpers\Enums\EventType.cs" />
     <Compile Include="Helpers\Enums\Order.cs" />
     <Compile Include="Helpers\Enums\Result.cs" />
     <Compile Include="Helpers\Enums\UserType.cs" />
