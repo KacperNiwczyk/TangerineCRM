@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using TangerineCRM.Business;
 using TangerineCRM.Business.Managers;
 using TangerineCRM.Core.Helpers;
 using TangerineCRM.Core.Helpers.Enums;
@@ -18,11 +19,13 @@ namespace TangerineCRM.WebUI.Controllers
         AgreementManager agreementManager;
         ContractorManager contractorManager;
         SalesRepresentativeManager representativeManager;
+        ProductManager productManager;
         DatabaseContext context;
 
         public AgreementController()
         {
             context = new DatabaseContext();
+            productManager = new ProductManager(new ProductDal(context));
             agreementManager = new AgreementManager(new AgreementDal(context));
             contractorManager = new ContractorManager(new ContractorDal(context));
             representativeManager = new SalesRepresentativeManager(new SalesRepresentativeDal(context));
@@ -47,7 +50,10 @@ namespace TangerineCRM.WebUI.Controllers
             {
                 SelectListContractor = GetContractorDropDown(),
                 SelectListSalesRep = GetSalesRepresentativeDropDown(),
-                SelectListType = GetTypeDropDown()
+                SelectListType = GetTypeDropDown(),
+                AvailableProducts = GetAvailableProducts(),
+                SelectedProducts = new List<SelectListItem>()
+
             };
 
             return View(model);
@@ -165,6 +171,21 @@ namespace TangerineCRM.WebUI.Controllers
                 }));
 
             return list;
+        }
+
+        private List<SelectListItem> GetAvailableProducts()
+        {
+            var productList = new List<SelectListItem>();
+
+            var avProducts = productManager.GetAll();
+
+            avProducts.ForEach(x => productList.Add(new SelectListItem()
+            {
+                Value = x.ProductId.ToString(),
+                Text = $"{x.ProductId} {x.ProductName} {x.Price}zł"
+            }));
+
+            return productList;
         }
 
         private AgreementType GetType(string selectedType)

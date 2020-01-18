@@ -24,5 +24,9 @@ namespace TangerineCRM.WebUI.Models
 
         public string SelectedType { get; set; }
 
+        public IEnumerable<SelectListItem> AvailableProducts { get; set; }
+
+        public IEnumerable<SelectListItem> SelectedProducts { get; set; }
+
     }
 }
