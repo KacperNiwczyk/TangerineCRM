@@ -23,5 +23,6 @@ namespace TangerineCRM.WebUI.Models
         public string SelectedSalesRep { get; set; }
 
         public string SelectedType { get; set; }
+
     }
 }

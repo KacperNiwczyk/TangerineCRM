@@ -49,6 +49,7 @@
     <Compile Include="Base\SalesRepresentative.cs" />
     <Compile Include="Base\Store.cs" />
     <Compile Include="Base\User.cs" />
+    <Compile Include="EntityExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

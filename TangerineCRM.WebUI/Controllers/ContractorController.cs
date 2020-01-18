@@ -9,7 +9,7 @@ using TangerineCRM.WebUI.Models;
 
 namespace TangerineCRM.WebUI.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class ContractorController : Controller
     {
         ContractorManager contractorManager;

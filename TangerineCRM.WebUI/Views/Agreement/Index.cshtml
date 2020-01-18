@@ -1,6 +1,7 @@
 ﻿@model TangerineCRM.WebUI.Models.AgreementViewModel
 @using TangerineCRM.Core.Helpers
 @using TangerineCRM.Core.Helpers.Enums
+@using TangerineCRM.Entities
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -10,8 +11,7 @@
 <table class="table">
     <tr>
         <th>
-            Nr <br />
-            klienta
+            Klient
         </th>
         <th>
             Nr <br />
@@ -42,13 +42,13 @@
         }
         <tr>
             <td>
-                @item.SalesRepresentativeID
+                @item.Contractor.GetFullContractorName()
             </td>
             <td>
-                @item.ContractorID
+                @item.SalesRepresentative.GetRepresentativeFullName()
             </td>
             <td>
-                @item.Date.ToString("dd-MM-yyy")
+                @item.Date.ToString("dd-MM-yyyy")
             </td>
             <td>
                 @item.Type.GetStringValue()

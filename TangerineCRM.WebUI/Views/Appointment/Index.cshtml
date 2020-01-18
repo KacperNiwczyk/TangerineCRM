@@ -1,21 +1,21 @@
 ﻿@model TangerineCRM.WebUI.Models.AppointmentViewModel
 @using TangerineCRM.Core.Helpers
-
+@using TangerineCRM.Entities
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @Styles.Render("~/Content/table")
 <h2>Spotkania</h2>
 <table class="table">
     <tr>
         <th>
-            Nr <br />
-            klienta
+            <br />
+            Klient
         </th>
         <th>
-            Nr <br />
-            przedstawiciela
+            <br />
+            Przedstawiciela
         </th>
         <th>
             Data
@@ -37,34 +37,35 @@
         </th>
     </tr>
 
-@foreach (var item in Model.AppointmentList) {
-    <tr>
-        <td>
-            @item.SalesRepresentativeID
-        </td>
-        <td>
-            @item.ContractorID
-        </td>
-        <td>
-            @item.Date.ToString("dd-MM-yyy")
-        </td>
-        <td>
-            @item.Type.GetStringValue()
-        </td>
-        <td>
-            @item.Event.GetStringValue()
-        </td>
-        <td>
-            @item.Result.GetStringValue()
-        </td>
-        <td>
-            @item.Note
-        </td>
-        <td>
-            <a href="@Url.Action("Update", "Appointment", new {id = item.AppointmentId})" class="icon-update" />
-            <a href="@Url.Action("Delete", "Appointment", new {id = item.AppointmentId})" class="icon-delete" />
-        </td>
-    </tr>
-}
+    @foreach (var item in Model.AppointmentList)
+    {
+        <tr>
+            <td>
+                @item.Contractor.GetFullContractorName()
+            </td>
+            <td>
+                @item.SalesRepresentative.GetRepresentativeFullName()
+            </td>
+            <td>
+                @item.Date.ToString("dd-MM-yyyy")
+            </td>
+            <td>
+                @item.Type.GetStringValue()
+            </td>
+            <td>
+                @item.Event.GetStringValue()
+            </td>
+            <td>
+                @item.Result.GetStringValue()
+            </td>
+            <td>
+                @item.Note
+            </td>
+            <td>
+                <a href="@Url.Action("Update", "Appointment", new {id = item.AppointmentId})" class="icon-update" />
+                <a href="@Url.Action("Delete", "Appointment", new {id = item.AppointmentId})" class="icon-delete" />
+            </td>
+        </tr>
+    }
 
 </table>
