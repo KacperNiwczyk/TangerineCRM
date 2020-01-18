@@ -256,6 +256,10 @@ namespace TangerineCRM.WebUI.Controllers
 
             appointmentManager.Update(appointment);
 
+            if (model.CreateAgreementFromAppointment)
+            {
+                return RedirectToAction("CreateFromAppointment", "Agreemnet", model);
+            }
 
             return RedirectToAction("Index", "Home");
         }

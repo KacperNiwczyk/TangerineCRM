@@ -33,6 +33,8 @@ namespace TangerineCRM.WebUI.Models
 
         public string SelectedEvent { get; set; }
 
+        public bool CreateAgreementFromAppointment { get; set; }
+
         public string GetItemSelectedResult(Appointment appointment)
         {
             return appointment.Result.ToString();

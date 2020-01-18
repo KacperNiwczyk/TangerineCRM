@@ -6,13 +6,12 @@
 }
 @Styles.Render("~/Content/Login")
 @Styles.Render("~/Content/dropdown")
-@Styles.Render("~/Content/table")
 <h2>Ustaw rezultat</h2>
 <body>
     <div class="wrapper fadeInDown" style="align-items: flex-start">
         <div id="formContent">
             <!-- Login Form -->
-            @using (Html.BeginForm("UpdateResult", "Appointment", FormMethod.Post))
+            @using (Html.BeginForm("UpdateResult", "Appointment", FormMethod.Post, new { id ="form"}))
             {
                 @Html.HiddenFor(x => x.SingleAppointment.AppointmentId)
 
@@ -22,17 +21,13 @@
                     @Html.DropDownListFor(x => x.SelectedResult, Model.SelectListResult)
                     <br />
                 </div>
-                <input type="submit" id="btn" data-toggle="modal" data-target="#Confirmation" class="fadeIn fourth" value="Zmień" onclick="">
+               @Html.CheckBoxFor(x => x.CreateAgreementFromAppointment)
+
+                <input type="submit" id="btn" data-toggle="modal" data-target="#Confirmation" class="fadeIn fourth" value="Zmień">
             }
         </div>
     </div>
 </body>
-<div class="modal fade" id="Confirmation">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <a href="@Url.Action("Update", "Appointment", new {id = Model.SingleAppointment.AppointmentId})" class="icon-update" />
 
-        </div>
-    </div>
-</div>
+
 

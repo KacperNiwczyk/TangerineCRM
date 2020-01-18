@@ -52,6 +52,34 @@ namespace TangerineCRM.WebUI.Controllers
             return View(model);
         }
 
+        public ActionResult Create(AppointmentViewModel model)
+        {
+            var agreement = ParseValuesFromAppointment(model.SingleAppointment);
+
+            var viewModel = new AgreementViewModel()
+            {
+                SelectListContractor = GetContractorDropDown(),
+                SelectListSalesRep = GetSalesRepresentativeDropDown(),
+                SelectListType = GetTypeDropDown(),
+                SingleAgreement = agreement
+            };
+
+            return View(viewModel);
+        }
+
+        private Agreement ParseValuesFromAppointment(Appointment appointment)
+        {
+            var agreement = new Agreement()
+            {
+                Contractor = appointment.Contractor,
+                ContractorID = appointment.ContractorID,
+                SalesRepresentative = appointment.SalesRepresentative,
+                SalesRepresentativeID = appointment.SalesRepresentativeID
+            };
+
+            return agreement;
+        }
+
         [HttpPost]
         public ActionResult Add(AgreementViewModel model)
         {
