@@ -1,4 +1,66 @@
-﻿@{
+﻿@model TangerineCRM.WebUI.Models.AppointmentViewModel
+@using TangerineCRM.Core.Helpers
+@using TangerineCRM.Entities
+@{
     ViewBag.Title = "Home Page";
 }
-<h2>Witaj w programie TangerineCRM</h2>
+@Styles.Render("~/Content/table")
+<h2>Spotkania, które wymagają zmiany statusu</h2>
+<table class="table">
+    <tr>
+        <th>
+            Klient
+        </th>
+        <th>
+            Przedstawiciela
+        </th>
+        <th>
+            Data
+        </th>
+        <th>
+            Typ
+        </th>
+        <th>
+            Wydarzenie
+        </th>
+        <th>
+            Rezultat
+        </th>
+        <th>
+            Notka
+        </th>
+        <th>
+
+        </th>
+    </tr>
+
+    @foreach (var item in Model.AppointmentList)
+    {
+        <tr>
+            <td>
+                @item.Contractor.GetFullContractorName()
+            </td>
+            <td>
+                @item.SalesRepresentative.GetRepresentativeFullName()
+            </td>
+            <td>
+                @item.Date.ToString("dd-MM-yyyy")
+            </td>
+            <td>
+                @item.Type.GetStringValue()
+            </td>
+            <td>
+                @item.Event.GetStringValue()
+            </td>
+            <td>
+                @item.Result.GetStringValue()
+            </td>
+            <td>
+                @item.Note
+            </td>
+            <td>
+                <a href="@Url.Action("UpdateResult", "Appointment", new {id = item.AppointmentId})" class="icon-update" />
+            </td>
+        </tr>
+    }
+</table>

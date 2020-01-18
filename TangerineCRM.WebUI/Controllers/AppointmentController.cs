@@ -232,5 +232,32 @@ namespace TangerineCRM.WebUI.Controllers
 
             return model;
         }
+
+
+        public ActionResult UpdateResult(int id)
+        {
+            var a = appointmentManager.GetBy(x => x.AppointmentId == id);
+
+            var model = new AppointmentViewModel()
+            {
+                SingleAppointment = a,
+                SelectListResult = GetResultDropDown(),
+                SelectedResult = a.Result.ToString()
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateResult(AppointmentViewModel model)
+        {
+            var appointment = appointmentManager.GetBy(x => x.AppointmentId == model.SingleAppointment.AppointmentId);
+            appointment.Result = GetResult(model.SelectedResult);
+
+            appointmentManager.Update(appointment);
+
+
+            return RedirectToAction("Index", "Home");
+        }
     }
 }
