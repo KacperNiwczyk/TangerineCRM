@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using System.Web.Routing;
 using TangerineCRM.Business.Managers;
 using TangerineCRM.Core.Helpers;
 using TangerineCRM.Core.Helpers.Enums;
@@ -227,7 +228,9 @@ namespace TangerineCRM.WebUI.Controllers
                 SelectListType = GetTypeDropDown(),
                 SelectedType = a.Type.ToString(),
                 SelectListResult = GetResultDropDown(),
-                SelectedResult = a.Result.ToString()
+                SelectedResult = a.Result.ToString(),
+                SelectEventList = GetEventDropDown(),
+                SelectedEvent = a.Event.ToString()
             };
 
             return model;
@@ -255,11 +258,6 @@ namespace TangerineCRM.WebUI.Controllers
             appointment.Result = GetResult(model.SelectedResult);
 
             appointmentManager.Update(appointment);
-
-            if (model.CreateAgreementFromAppointment)
-            {
-                return RedirectToAction("CreateFromAppointment", "Agreemnet", model);
-            }
 
             return RedirectToAction("Index", "Home");
         }
