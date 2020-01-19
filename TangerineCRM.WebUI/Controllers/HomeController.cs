@@ -27,7 +27,7 @@ namespace TangerineCRM.WebUI.Controllers
         {
             var model = new AppointmentViewModel()
             {
-                AppointmentList = appointmentManager.GetAll().Where(x => x.Date >= DateTime.Now && x.Result == Result.INDEFINITE).ToList(),
+                AppointmentList = appointmentManager.GetAll().Where(x => x.Date <= DateTime.Now && x.Result == Result.INDEFINITE).ToList(),
                 SelectListResult = GetResultDropDown()
             };
 
