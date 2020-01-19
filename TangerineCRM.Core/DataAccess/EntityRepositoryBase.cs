@@ -43,7 +43,7 @@ namespace TangerineCRM.Core.DataAccess
             foreach (Expression<Func<TEntity, object>> navigationProperty in navigationProperies)
                 dbQuery = dbQuery.Include(navigationProperty);
 
-            return dbQuery.AsNoTracking().Where(filter).FirstOrDefault();
+            return dbQuery.Where(filter).FirstOrDefault();
         }
 
         public List<TEntity> GetList(Expression<Func<TEntity, bool>> filter = null, params Expression<Func<TEntity, object>>[] navigationProperties)
