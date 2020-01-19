@@ -22,7 +22,7 @@ namespace TangerineCRM.Business
 
         public List<Product> GetAll()
         {
-            return _productDal.GetList(null, x => x.Store, x => x.Store.Contractor); // no way around 
+            return _productDal.GetList(null, x => x.Store, x => x.Store.Contractor);
         }
 
         public Product GetBy(Expression<Func<Product, bool>> filter)

@@ -10,7 +10,6 @@ namespace TangerineCRM.Entities.Base
         public string FirstName { get; set; }
         [Required(ErrorMessage = "To pole jest wymagane")]
         public string LastName { get; set; }
-
         public int Discount { get; set; }
         public bool IsContracted { get; set; }
     }
