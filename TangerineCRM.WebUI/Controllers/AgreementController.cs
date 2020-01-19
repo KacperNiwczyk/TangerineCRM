@@ -155,7 +155,9 @@ namespace TangerineCRM.WebUI.Controllers
 
         private Product GetProduct(string id)
         {
-            return productManager.GetBy(x => x.ProductId == int.Parse(id));
+            var prodId = int.Parse(id);
+
+            return productManager.GetBy(x => x.ProductId == prodId);
         }
 
         private List<SelectListItem> GetContractorDropDown()

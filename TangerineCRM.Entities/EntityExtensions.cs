@@ -1,4 +1,6 @@
-﻿using TangerineCRM.Entities.Base;
+﻿using System.Collections.Generic;
+using System.Linq;
+using TangerineCRM.Entities.Base;
 
 namespace TangerineCRM.Entities
 {
@@ -13,6 +15,11 @@ namespace TangerineCRM.Entities
         public static string GetRepresentativeFullName(this SalesRepresentative representative)
         {
             return string.Concat('[', representative.SalesRepresentativeId, ']', " ", representative.FirstName, " ", representative.LastName);
+        }
+
+        public static string GetProducts(this List<Product> products)
+        {
+            return string.Join(", ", products.Select(x => x.ProductName));
         }
     }
 }
