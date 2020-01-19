@@ -52,7 +52,7 @@ namespace TangerineCRM.WebUI.Controllers
                 SelectListSalesRep = GetSalesRepresentativeDropDown(),
                 SelectListType = GetTypeDropDown(),
                 AvailableProducts = GetAvailableProducts(),
-                SelectedProducts = new List<SelectListItem>()
+                SelectedProducts = new List<string>()
 
             };
 
@@ -114,6 +114,8 @@ namespace TangerineCRM.WebUI.Controllers
 
         private Agreement ParselValuesFromModel(AgreementViewModel model)
         {
+            var products = GetProductsFromList(model.SelectedProducts);
+
             var agreement = new Agreement()
             {
                 AgreementId = model.SingleAgreement.AgreementId,
@@ -122,11 +124,38 @@ namespace TangerineCRM.WebUI.Controllers
                 SalesRepresentative = GetRepsresentative(model.SelectedSalesRep, out int representativeId),
                 SalesRepresentativeID = representativeId,
                 Type = GetType(model.SelectedType),
+                Products = products,
                 Date = model.SingleAgreement.Date,
-                Value = model.SingleAgreement.Value
+                Value = GetProductsValue(products)
             };
 
             return agreement;
+        }
+
+        private List<Product> GetProductsFromList(IEnumerable<string> selectedProducts)
+        {
+            int cap = selectedProducts.ToList().Count;
+
+            var products = new List<Product>(cap);
+
+            foreach (var prod in selectedProducts)
+            {
+                products.Add(GetProduct(prod));
+            }
+
+            return products;
+        }
+
+        private decimal GetProductsValue(List<Product> products)
+        {
+            decimal sum = products.Sum(x => x.Price);
+
+            return sum;
+        }
+
+        private Product GetProduct(string id)
+        {
+            return productManager.GetBy(x => x.ProductId == int.Parse(id));
         }
 
         private List<SelectListItem> GetContractorDropDown()

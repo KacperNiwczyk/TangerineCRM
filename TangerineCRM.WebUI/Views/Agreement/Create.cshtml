@@ -49,7 +49,8 @@
                 <div class="field">
                     <label>Produkty</label>
                     <br />
-                    @Html.ListBoxFor(x => x.AvailableProducts, Model.SelectedProducts)
+                    @Html.ListBoxFor(x => x.SelectedProducts, Model.AvailableProducts, new { @style="height:100px" })
+                    <br />
                 </div>
 
                 @Html.TextBoxFor(x => x.SingleAgreement.Value, new { @class = "fadeIn second", @name = "Wartość", @placeholder = "Wartość" });
